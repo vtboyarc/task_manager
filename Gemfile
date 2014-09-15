@@ -37,3 +37,7 @@ gem 'pry-rails'
 
 # To use debugger
 # gem 'debugger'
+
+group :development, :test do
+  gem 'rspec-rails', '~> 3.0.0'
+end
