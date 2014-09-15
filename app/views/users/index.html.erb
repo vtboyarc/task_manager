@@ -1,0 +1,10 @@
+<h1>Users!</h1>
+
+
+
+<% @users.each do |user|%>
+	<!-- <p><%= proj.name%> <%= proj.category%></p> -->
+	<p><%= link_to(user.name, task_user(user.id)) %></p>
+<%end%>
+
+<%= link_to("New User", new_user_path) %>
