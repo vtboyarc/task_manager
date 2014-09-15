@@ -1,0 +1,21 @@
+<h1>Edit!</h1>
+
+<%= form_for @user do |t| %>
+
+  <p>
+    <%= t.label :name %>
+    <%= t.text_field :name %>
+  </p>
+	
+  <p>
+    <%= t.label :email %>
+    <%= t.text_field :email %>
+  </p>
+	
+ 	
+	
+	
+	
+	<%= t.submit %>
+
+<% end %>
