@@ -8,7 +8,6 @@ class LoginsController < ApplicationController
     
       if user && user.authenticate(params[:password]) #if user && is to keep from being nil
         session[:user_id] = user.id
-        
 
         redirect_to root_path
       else
