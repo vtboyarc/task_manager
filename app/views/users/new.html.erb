@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <h1>Sign Up</h1>
 <div id="newsub">
 <%= form_for @user do |f| %>
@@ -5,10 +6,20 @@
   <p>
     <%= f.label :name %>
     <%= f.text_field :name %>
+=======
+<h1>Create New Task!</h1>
+
+<%= form_for @task do |t| %>
+
+  <p>
+    <%= t.label :name %>
+    <%= t.text_field :name %>
+>>>>>>> 851116494c5648c791388bb56c0f37d5a5ab29d3
   </p>
 	
 	
 	<p>
+<<<<<<< HEAD
     <%= f.label :email %>
     <%= f.text_field :email %>
   </p>
@@ -31,3 +42,22 @@
 </div>
 
 <p><%= link_to("Cancel User Create", root_path)%><p>
+=======
+    <%= t.label :description %>
+    <%= t.text_field :description %>
+  </p>
+	
+	<p>
+    <%= t.label :priority %>
+    <%= t.text_field :priority %>
+  </p>
+	
+	<p>
+    <%= t.label :due_date %>
+    <%= t.text_field :due_date %>
+  </p>
+	
+	<%= t.submit %>
+
+<% end %>
+>>>>>>> 851116494c5648c791388bb56c0f37d5a5ab29d3
