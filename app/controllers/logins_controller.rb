@@ -10,9 +10,9 @@ class LoginsController < ApplicationController
       if user && user.authenticate(params[:password]) #if user && is to keep from being nil
         session[:user_id] = user.id
 
-        redirect_to root_path
+        redirect_to root_path, notice: "Welcome back, #{user.email}."
       else
-        raise "Invalid login."
+        render "new", alert: "Invalid log in, please try again"
       end
   end
   
