@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   
-   skip_before_filter :authorize, :only => [:new, :create]
+   skip_before_filter :authorize
   
   def new
     @user = User.new
