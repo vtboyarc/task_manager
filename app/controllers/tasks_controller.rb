@@ -1,6 +1,6 @@
 class TasksController < ApplicationController
-  
-  skip_before_filter :authorize, :only => [:index, :show]
+
+  skip_before_filter :authorize, :only => [:new, :create]
  
   def index
     @task = Task.all

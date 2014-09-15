@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
   
-  before_filter :authorize
+  skip_before_filter :authorize, :only => [:new, :create]
   
   def authorize
     if current_user.nil?
