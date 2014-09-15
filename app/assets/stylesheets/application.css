@@ -137,6 +137,7 @@ body{text-align:center;}
 	font-size:1em;
 	margin:0;
 	padding:10px;
+  font-color:#FCECD2;
 	}
 	
 #header h1 a{
@@ -171,6 +172,7 @@ body{text-align:center;}
 #footer{
 	height:50px;
 	background:#673335;
+  text-color:#FCECD2;
 	border-top:#FCECD2 2px solid;
 	margin:0;
 	padding:0;
