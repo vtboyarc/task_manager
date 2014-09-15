@@ -1,11 +1,11 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
   
-<<<<<<< HEAD
+
   before_filter :authorize
-=======
+
   skip_before_filter :authorize, :only => [:new, :create]
->>>>>>> 851116494c5648c791388bb56c0f37d5a5ab29d3
+
   
   def authorize
     if current_user.nil?
