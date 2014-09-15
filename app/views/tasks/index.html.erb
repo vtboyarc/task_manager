@@ -1,0 +1,10 @@
+<h1>Tony Plaza's Omaha Code School Projects</h1>
+
+
+
+<% @tasks.each do |task|%>
+	<!-- <p><%= proj.name%> <%= proj.category%></p> -->
+	<p><%= link_to(task.name, task_path(task.id)) %></p>
+<%end%>
+
+<%= link_to("New Task", new_task_path) %>
