@@ -1,28 +1,28 @@
-<h1>Sign Up</h1>
+<h1>Create New Task!</h1>
 
-<%= form_for @user do |f| %>
+<%= form_for @task do |t| %>
 
   <p>
-    <%= f.label :name %>
-    <%= f.text_field :name %>
+    <%= t.label :name %>
+    <%= t.text_field :name %>
   </p>
 	
 	
 	<p>
-    <%= f.label :email %>
-    <%= f.text_field :email %>
+    <%= t.label :description %>
+    <%= t.text_field :description %>
   </p>
-  
-  <p>
-    <%= f.label :password %>
-    <%= f.password_field :password %>
+	
+	<p>
+    <%= t.label :priority %>
+    <%= t.text_field :priority %>
   </p>
-  
-  <p>
-    <%= f.label :password_confirmation %>
-    <%= f.password_field :password_confirmation %>
+	
+	<p>
+    <%= t.label :due_date %>
+    <%= t.text_field :due_date %>
   </p>
-  
-  <%= f.submit %>
+	
+	<%= t.submit %>
 
 <% end %>
