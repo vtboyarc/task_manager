@@ -18,6 +18,4 @@ class ApplicationController < ActionController::Base
   end
   #this allows the current_user method to be available in all the views
   helper_method :current_user
-  
 end
-
