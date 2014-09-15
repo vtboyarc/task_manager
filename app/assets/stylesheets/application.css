@@ -182,3 +182,11 @@ body{text-align:center;}
 #clearfloat {
   clear: both;
 }
+
+#notice {
+  text-color:#118C2A;
+}
+
+#alert {
+  text-color:#C30B0F;
+}
