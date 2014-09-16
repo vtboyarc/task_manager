@@ -1,1 +1,12 @@
 TAGS NEW
+
+<%= form_for @tag do |t| %>
+
+  <p>
+    <%= t.label :name %>
+    <%= t.text_field :name %>
+  </p>
+	
+	<%= t.submit %>
+
+<% end %>

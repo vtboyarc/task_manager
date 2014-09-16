@@ -1,1 +1,8 @@
 TAGS INDEX
+<p>
+<% @tags.each do |tag|%>
+
+	<p><%= link_to(tag.name, tag_path(tag.id)) %></p>
+<%end%>
+</p>
+<%= link_to("New Tag", new_tag_path) %>

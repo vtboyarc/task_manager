@@ -38,11 +38,10 @@ class TasksController < ApplicationController
     @task = Task.find(params[:id])
     redirect_to tasks_path, :notice => "You have deleted this task."
   end
-  
+
   
   def show
     @task = Task.find(params[:id])
   end
-  
   
 end
