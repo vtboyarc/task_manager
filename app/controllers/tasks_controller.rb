@@ -8,6 +8,9 @@ class TasksController < ApplicationController
   
   def new
     @task = Task.new
+    @projects = Project.all
+    @tags = Tag.all
+    @users = User.all
   end
  
   def create

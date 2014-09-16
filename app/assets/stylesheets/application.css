@@ -129,12 +129,13 @@ body{text-align:center;}
 #header{
 	height:100px;
 	background-color: #82B2BF;
+  font-family:Trebuchet MS;
 	margin:0;
 	padding:0;
 	}
 	
 #header h1{
-	font-size:1em;
+	font-size:25px;
 	margin:0;
 	padding:10px;
   font-color:#FCECD2;
@@ -174,8 +175,8 @@ body{text-align:center;}
 	}
   
 #newsub {
+  align:center;
   padding:20px;
-  float:left;
   background-color:#CDF0F9;
 }  
 
@@ -215,4 +216,20 @@ body{text-align:center;}
     margin: 0;
     padding-right: 25px;
     display:inline;
+}
+
+/*label{
+    display: inline-block;
+    float: left;
+    clear: left;
+    width: 43%;
+    text-align: right;
+}
+input {
+  display: inline-block;
+  float: left;
+}*/
+
+.clearfloat {
+  clear:both;
 }

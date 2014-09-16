@@ -10,7 +10,7 @@
 
   <div id="userbar">
     <% if current_user %>
-    <%= current_user.name %> [<%= link_to("Log Out", logout_path)%>]
+    <%= "Currently logged in as " + current_user.name %> [<%= link_to("Log Out", logout_path)%>]
     <% else %>
     [<%= link_to("Existing User Log In", login_path) %>][<%= link_to("New User Sign Up", signup_path)%>]
     <% end %>
