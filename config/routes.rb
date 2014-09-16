@@ -12,6 +12,5 @@ TaskManager::Application.routes.draw do
    get "signup" => 'users#new', :as => "signup"
    
    resources :users, :tasks, :projects, :tags
-
-
+   
 end
