@@ -4,6 +4,7 @@ TaskManager::Application.routes.draw do
    
    get "login" => 'logins#new', :as => "login"
    post "login" => 'logins#create', :as => "create_login" 
+   get 'logout' => 'logins#destroy', :as => 'logout'
    
    get "logout" => 'logins#destroy', :as => "logout"
 
@@ -11,4 +12,5 @@ TaskManager::Application.routes.draw do
    get "signup" => 'users#new', :as => "signup"
    
    resources :users, :tasks, :projects, :tags
+   
 end
