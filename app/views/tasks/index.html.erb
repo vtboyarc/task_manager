@@ -1,8 +1,12 @@
-TASKS INDEX
+<div id="header"><h1>Tasks Index</h1></div>
+<div id="newsub">
 <p>
 <% @tasks.each do |task|%>
 
 	<p><%= link_to(task.name, task_path(task.id)) %></p>
 <%end%>
 </p>
-<%= link_to("New Task", new_task_path) %>
+</div>
+
+<p>
+<%= link_to("Add a New Task", new_task_path) %></p>

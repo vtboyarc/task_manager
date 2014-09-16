@@ -1,5 +1,5 @@
-<h1>Existing User Log In</h1>
-
+<div id="header"><h1>Existing User Log In</h1></div>
+<div id="newsub">
 <%= form_tag login_path do %>
   <div class="field">
     <%= label_tag :email %><br />
@@ -13,6 +13,6 @@
   
   <%= submit_tag "Log In" %>
 <% end %>
-
+</div>
 <p>Not an existing user? <%= link_to("Click here", new_user_path) %> to create new user account.
 <p><%= link_to 'Go Home', root_path %></p>

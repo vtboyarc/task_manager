@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
   attr_accessible :email, :name, :password, :password_confirmation
-  has_many :tasks
+  has_and_belongs_to_many :tasks
   
   has_secure_password
   
@@ -12,4 +12,10 @@ class User < ActiveRecord::Base
       @user_id ||= User.find(session[:user_id])
     end
   end
+  
+  def notify_user
+  end
+  
+  
+  
 end

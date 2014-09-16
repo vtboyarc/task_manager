@@ -1,8 +1,11 @@
-TAGS INDEX
+<div id="header"><h1>Tags Index</h1></div>
+<div id="newsub">
 <p>
 <% @tags.each do |tag|%>
 
 	<p><%= link_to(tag.name, tag_path(tag.id)) %></p>
 <%end%>
+
+</div>
 </p>
-<%= link_to("New Tag", new_tag_path) %>
+<%= link_to("Creat a New Tag", new_tag_path) %>
