@@ -6,6 +6,8 @@ TASKS SHOW
 	<p>Name: <%= @task.name %></p>
 	<p>Priority: <%= @task.priority %></p>
 	<p>Due Date: <%= @task.due_date %></p>
+  <p>Project: <%= @project.name %></p>
+  <p>Tag: <%= @tag.name %></p>
 
 <%= link_to("Edit Task Project", edit_task_path) %>
 <%= link_to("Delete Task", task_path, :method => :delete) %>
