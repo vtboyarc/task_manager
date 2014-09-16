@@ -1,5 +1,4 @@
-
-<h1>Create New Task!</h1>
+<h1>Create New Task</h1>
 
 
 <%= form_for @task do |t| %>
@@ -8,22 +7,24 @@
     <%= t.label :name %>
     <%= t.text_field :name %>
   </p>
-	
-	
 	<p>
     <%= t.label :description %>
     <%= t.text_field :description %>
   </p>
-	
 	<p>
     <%= t.label :priority %>
     <%= t.text_field :priority %>
   </p>
-	
 	<p>
     <%= t.label :due_date %>
     <%= t.text_field :due_date %>
   </p>
+	<p>
+    <%= t.label :tag %>
+    <%= t.text_field :tag %>
+  </p>
+  
+  
 	
 	<%= t.submit %>
 

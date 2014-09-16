@@ -1,8 +1,8 @@
-<h1>Tasks!</h1>
-
+TASKS INDEX
+<p>
 <% @tasks.each do |task|%>
 
 	<p><%= link_to(task.name, task_path(task.id)) %></p>
 <%end%>
-
+</p>
 <%= link_to("New Task", new_task_path) %>
