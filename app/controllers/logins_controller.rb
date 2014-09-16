@@ -10,7 +10,7 @@ class LoginsController < ApplicationController
       if @user && @user.authenticate(params[:password]) #if user && is to keep from being nil
         session[:user_id] = @user.id
 
-        redirect_to tasks_path, notice: "Welcome back #{@user.email}."
+        redirect_to root_path, notice: "Welcome back #{@user.email}."
       else
         render "new", alert: "Invalid log in, please try again"
       end
