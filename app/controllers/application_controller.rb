@@ -2,12 +2,12 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
 
 
-  skip_before_filter :authorize, :only => [:new, :create]
+  before_filter :authorize
 
   
   def authorize
     if current_user.nil?
-      redirect_to logins_path, :alert => "You need to log in first!"
+      redirect_to tasks_path, :alert => "You need to log in first!"
     end
   end
   
