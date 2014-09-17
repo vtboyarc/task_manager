@@ -1,13 +1,16 @@
-
 <div id="header"><h1>Projects Index</h1></div>
 <div id="newsub">
   
 <p>
+  
 <% @projects.each do |project|%>
 
-	<p><%= link_to(project.name, project_path(project.name)) %></p>
+	<p><div class="draggable"><%= link_to(project.name, project_path(project.name)) %></p>
 <%end%>
+</div>
 </p>
 </div>
 <p>
 <%= link_to("New Project", new_project_path) %></p>
+
+</div>
