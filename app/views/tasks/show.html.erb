@@ -10,6 +10,8 @@
   <p>Project: <%= @project.name %></p>
   <p>Tag: <%= @tag.name %></p>
   
+	<p>Assigned To: <%= @user.name %> </p>
+  
   <% @comments.each do |c| %>
   
     <p><%= c.message %></p>

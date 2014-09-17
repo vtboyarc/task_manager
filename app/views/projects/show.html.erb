@@ -1,5 +1,18 @@
 <h1><%= @project.name %>'s Details</h1> 
 	<p>Name: <%= @project.name %></p>
 	<p>Description: <%= @project.desc %></p>
+  
+  <p>Tasks:</br>
 
+
+      <% @project.tasks.each do |t| %>
+	
+        <p><%= link_to(t.name, task_path(t.id))%></p>
+	  
+      <% end %>
+  
+  
 <%= link_to("Edit Task Project", edit_project_path) %>
+<p><%= link_to("All projects", projects_path)%></p>
+
+<p><%= link_to('Home', root_path) %></p>

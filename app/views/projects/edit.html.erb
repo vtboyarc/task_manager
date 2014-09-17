@@ -1,1 +1,5 @@
+<h1><%= @project.name %>'s Details</h1> 
+	<p>Name: <%= @project.name %></p>
+	<p>Description: <%= @project.desc %></p>
+	
 <%= link_to("Delete Project", project_path, :method => :delete) %>

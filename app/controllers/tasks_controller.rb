@@ -6,6 +6,10 @@ class TasksController < ApplicationController
     @tasks = Task.all
   end
   
+  def find
+    @task = Task.new
+  end
+  
   def new
     @task = Task.new
     @projects = Project.all
@@ -47,7 +51,11 @@ class TasksController < ApplicationController
     @task = Task.find(params[:id])
     @project = Project.find(@task.project_id)
     @tag = Tag.find(@task.tag_id)
+<<<<<<< HEAD
     @comments = @task.comments
+=======
+    @user = User.find(@task.user_id)
+>>>>>>> master
   end
   
   
