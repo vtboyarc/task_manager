@@ -65,7 +65,7 @@ class TasksController < ApplicationController
                 :to => "#{@user.email}",
                 :via => :smtp,
                 :subject => "#{current_user.name}" + " has changed/updated a task.",
-                :body => "Please visit Task Manager and review " + "#{@task.name}" + "./n/nTask Description: " + "#{@task.description}",
+                :body => "Please visit Task Manager and review Task: " + "#{@task.name}" + ".\n\nTask Description: " + "#{@task.description}",
                 :via_options => {
                   :address              => 'smtp.gmail.com',
                   :port                 => '587',
