@@ -5,10 +5,6 @@
   
 });
 
-
-
-
-
 // to force it to drop in a certain place
 // $(function() {
 //     $("#draggable").draggable({
