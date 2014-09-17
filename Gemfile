@@ -30,6 +30,7 @@ gem 'pry-rails'
 
 gem 'jquery-ui-rails'
 
+gem 'pony', '~> 1.11'
 
 # Use unicorn as the app server
 # gem 'unicorn'
