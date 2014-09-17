@@ -1,45 +1,92 @@
-<div id="header"><h1>Edit Task</h1></div>
-<div id="newsub">
 
-<%= form_for @task do |t| %>
 
-  <p>
-    <%= t.label :name %>
-    <%= t.text_field :name %>
-  </p>
+
+
+<div id="doc" class="yui-t2">
+  <div id="hd">
+    <div id="header"><h1>Task, Inc. - Task Manager</h1></div>
+  </div>
+  <div id="bd">
+    <div id="yui-main">
+      <div class="yui-b">
+      
+          <div class="yui-u first">
+            <div class="content">
+              
+
+              
+             <%= form_for @task do |t| %>
+
+               <p>
+                 <%= t.label :name %>
+                 <%= t.text_field :name %>
+               </p>
 	
 	
-	<p>
-    <%= t.label :description %>
-    <%= t.text_field :description %>
-  </p>
+             	<p>
+                 <%= t.label :description %>
+                 <%= t.text_field :description %>
+               </p>
 	
-	<p>
-    <%= t.label :priority %>
-    <%= t.text_field :priority %>
-  </p>
+             	<p>
+                 <%= t.label :priority %>
+                 <%= t.text_field :priority %>
+               </p>
 	
-	<p>
-    <%= t.label :due_date %>
-    <%= t.text_field :due_date %>
-  </p>
+             	<p>
+                 <%= t.label :due_date %>
+                 <%= t.text_field :due_date %>
+               </p>
   
-  <p>
-      <%= t.label :project %>
-      <%= t.collection_select :project_id, Project.all, :id, :name %>
-    </p>
-  <p>
-      <%= t.label :tag %>
-      <%= t.collection_select :tag_id, Tag.all, :id, :name %>
-    </p>
-  	<p>
-      <%= t.label :assigned_to %>
-      <%= t.collection_select :user_id, User.all, :id, :name %>
-    </p>
+               <p>
+                   <%= t.label :project %>
+                   <%= t.collection_select :project_id, Project.all, :id, :name %>
+                 </p>
+               <p>
+                   <%= t.label :tag %>
+                   <%= t.collection_select :tag_id, Tag.all, :id, :name %>
+                 </p>
+               	<p>
+                   <%= t.label :assigned_to %>
+                   <%= t.collection_select :user_id, User.all, :id, :name %>
+                 </p>
 	
-	<%= t.submit value: "Save Changes"%>
+             	<%= t.submit value: "Save Changes"%>
 
-<% end %>
+             <% end %>
+             
+
+              
+              
+              
+            </div>
+     
+          
+        </div>
+      </div>
+    </div>
+    <div class="yui-b">
+      <div id="secondary"><h2>Edit Task</h2>
+        
+      
+            
+            
+            <p>
+            <%= link_to("Cancel Edit", tasks_path) %></p>
+            
+            <p><%= link_to("Return to Home", root_path) %></p>
+      
+      
+      </div>
+
+    </div>
+  </div>
+  <div id="ft">
+    <div id="footer"></div>
+  </div>
 </div>
-<p>
-<%= link_to("Cancel Edit", tasks_path) %></p>
+
+
+
+</div>
+
