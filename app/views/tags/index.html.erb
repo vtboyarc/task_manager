@@ -1,11 +1,45 @@
-<div id="header"><h1>Tags Index</h1></div>
-<div id="newsub">
-<p>
-<% @tags.each do |tag|%>
+<div id="doc" class="yui-t2">
+  <div id="hd">
+    <div id="header"><h1>Task, Inc. - Task Manager</h1></div>
+  </div>
+  <div id="bd">
+    <div id="yui-main">
+      <div class="yui-b">
+      
+          <div class="yui-u first">
+            <div class="content">
+              
 
-	<p><%= link_to(tag.name, tag_path(tag.id)) %></p>
-<%end%>
+              <p>
+              <% @tags.each do |tag|%>
 
+              	<p><%= link_to(tag.name, tag_path(tag.id)) %></p>
+              <%end%>
+
+
+              </p>
+              
+              
+            </div>
+     
+          
+        </div>
+      </div>
+    </div>
+    <div class="yui-b">
+      <div id="secondary"><h2>Tags Index</h2>
+        
+      
+            <p><%= link_to("Create a New Tag", new_tag_path) %></p>
+            <p><%= link_to("Return to Home", root_path) %></p>
+      
+      
+      </div>
+
+    </div>
+  </div>
+  <div id="ft">
+    <div id="footer"></div>
+  </div>
 </div>
-</p>
-<%= link_to("Creat a New Tag", new_tag_path) %>
+
