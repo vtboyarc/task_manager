@@ -41,7 +41,7 @@ class CommentsController < ApplicationController
   def destroy
     @comment = Comment.find(params[:id])
     @task = Task.find(@comment.task_id)
-    @comment.destroy
+    @comment.delete
     redirect_to task_path(@task), :notice => "You have deleted this comment."
   end
 

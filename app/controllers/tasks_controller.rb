@@ -83,7 +83,7 @@ class TasksController < ApplicationController
 
   def destroy
     @task = Task.find(params[:id])
-    @task.destroy
+    @task.delete
     redirect_to tasks_path, :notice => "You have deleted this task."
   end
 
