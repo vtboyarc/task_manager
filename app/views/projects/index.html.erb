@@ -2,6 +2,9 @@
 <div id="newsub">
 
 <p>
+  <% if current_user %>
+
+      <h4><%= current_user.name.capitalize %>'s Projects</h4>
   
 <% @projects.each do |project|%>
 
@@ -9,6 +12,12 @@
 	<p><div class="draggable"><%= link_to(project.name, project_path(project.name)) %></p>
 
 <%end%>
+
+<% else %>
+
+  <p><%= "No Projects yet"%></p>
+  
+<% end %>
 </div>
 </p>
 </div>
