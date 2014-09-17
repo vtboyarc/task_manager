@@ -19,13 +19,20 @@ class TasksController < ApplicationController
  
   def create
     @task = Task.new(params[:task])
-    
+    @user = User.where(id: params[:task][:user_id])
+    @projects = Project.all
+    @tags = Tag.all
+    @users = User.all
+    binding.pry
     if @task.save
+      binding.pry
+      Pony.mail(:to => "ocs.budai@gmail.com", :from => 'taskinc.taskmanager@gmail.com', :subject => 'Task Alert', :body => 'You have been assigned a new task #{@task.name}.')
+      binding.pry
       redirect_to tasks_path(@task.id), :notice => "You have saved a new task."
     else
       render "new"
     end
-  end
+  end 
   
   def edit
     @task = Task.find(params[:id])
@@ -33,8 +40,15 @@ class TasksController < ApplicationController
   
   def update
     @task = Task.find(params[:id])
+    @user = User.where({id: params[:task][:user_id]})
+    @projects = Project.all
+    @tags = Tag.all
+    @users = User.all
+    @email = Email.all
     
     if @task.update_attributes(params[:task])
+      Pony.mail(:to => @user.email, :from => 'taskinc.taskmanager@gmail.com', :subject => 'Task Alert', :body => 'Your task #{@task.name} has been updated.')
+      
       redirect_to tasks_path(@task.id), :notice => "You have upated this task."
     else
       render "edit"
