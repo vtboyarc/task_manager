@@ -1,5 +1,21 @@
-<h1><%= @project.name %>'s Details</h1> 
-	<p>Name: <%= @project.name %></p>
-	<p>Description: <%= @project.desc %></p>
+<div id="header"><h1>Edit Project</h1></div>
+<div id="newsub">
+
+<%= form_for @project do |p| %>
+
+  <p>
+    <%= p.label :name %>
+    <%= p.text_field :name %>
+  </p>
+	<p>
+    <%= p.label :desc %>
+    <%= p.text_field :desc %>
+  </p>
+	
+	<%= p.submit value: "Update"%>
+
+<% end %>
+
+</div>
 
 <%= link_to("Edit Task Project", edit_project_path) %>
