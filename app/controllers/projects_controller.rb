@@ -21,11 +21,11 @@ class ProjectsController < ApplicationController
   end
   
   def edit
-    @project = Project.find(params[:id])
+    @project = Project.find_by_name(params[:name])
   end
   
   def update
-    @project = Project.find(params[:id])
+    @project = Project.find_by_name(params[:name])
     
     if @project.update_attributes(params[:project])
       redirect_to projects_path(@project.id), :notice => "You have upated this project."
@@ -35,12 +35,12 @@ class ProjectsController < ApplicationController
   end
 
   def destroy
-    @project = Project.find(params[:id])
+    @project = Project.find_by_name(params[:name])
     redirect_to projects_path, :notice => "You have deleted this project."
   end
   
   
   def show
-    @project = Project.find(params[:id])
+    @project = Project.find_by_name(params[:name])
   end
 end
