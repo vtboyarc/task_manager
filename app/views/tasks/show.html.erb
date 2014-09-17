@@ -12,7 +12,7 @@
 
   <p>Project: <%= @project.name %></p>
   <p>Tag: <%= @tag.name %></p>
-	<p>Assigned To: </p>
+	<p>Assigned To: <%= @user.name %> </p>
 
 
 <p><%= link_to("Edit Task Project", edit_task_path) %></p>

@@ -47,7 +47,7 @@ class TasksController < ApplicationController
     @task = Task.find(params[:id])
     @project = Project.find(@task.project_id)
     @tag = Tag.find(@task.tag_id)
-    # @user = User.find(@task.user_id) why can't we do this?
+    @user = User.find(@task.user_id)
   end
   
   
