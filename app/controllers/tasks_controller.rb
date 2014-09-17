@@ -58,9 +58,6 @@ class TasksController < ApplicationController
     @user = User.find(@task.user_id)
     
     if @task.update_attributes(params[:task])
-<<<<<<< HEAD
-      redirect_to task_path(@task.id), :notice => "You have upated this task."
-=======
       Pony.mail({
                 :to => "#{@user.email}",
                 :via => :smtp,
@@ -79,7 +76,6 @@ class TasksController < ApplicationController
                 })
       
       redirect_to tasks_path(@task.id), :notice => "Your email notification to #{@user.name} was sent successfully."
->>>>>>> master
     else
       render "edit", alert: "Invalid. Your task was not updated."
     end  
