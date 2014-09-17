@@ -1,16 +1,7 @@
 // Place all the behaviors and hooks related to the matching controller here.
-<<<<<<< HEAD
-// All this logic will automatically be available in application.js.  
   $(function() {
-          
-          $( ".draggable" ).draggable();
-     
-      });
-=======
-// All this logic will automatically be available in application.js.
-$(function() {
   
-    $( "#draggable" ).draggable({ snap: true, grid: [ 10,10 ] });
+    $( ".draggable" ).draggable({ snap: true, grid: [ 10,10 ] });
   
 });
 
@@ -40,4 +31,3 @@ $(function() {
 //     <p>Drop me here</p>
 // </div>
 //
->>>>>>> master
