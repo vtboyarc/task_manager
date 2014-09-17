@@ -4,6 +4,7 @@
   
   <p>Tasks:</br>
 
+
       <% @project.tasks.each do |t| %>
 	
         <p><%= link_to(t.name, task_path(t.id))%></p>

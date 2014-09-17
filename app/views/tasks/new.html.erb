@@ -28,6 +28,10 @@
     <%= t.label :tag %>
     <%= t.collection_select :tag_id, Tag.all, :id, :name %>
   </p>
+	<p>
+    <%= t.label :user %>
+    <%= t.collection_select :user_id, User.all, :id, :name %>
+  </p>
   
   <p> 
   <%= t.submit value: "Create Task" %>
