@@ -38,6 +38,7 @@ class TagsController < ApplicationController
     @tag = Tag.find(params[:id])
     @tag.delete
     redirect_to tags_path, :notice => "You have deleted this tag."
+
   end
 
 

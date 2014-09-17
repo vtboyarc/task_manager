@@ -18,7 +18,7 @@ class TasksController < ApplicationController
   end
  
   def create
-    # @users = User.all
+
     @task = Task.new(params[:task])
     @task.project_id = (params[:task][:project_id]).to_i
     @task.tag_id = (params[:task][:tag_id]).to_i
@@ -83,7 +83,7 @@ class TasksController < ApplicationController
 
   def destroy
     @task = Task.find(params[:id])
-    @task.destroy
+    @task.delete
     redirect_to tasks_path, :notice => "You have deleted this task."
   end
 
