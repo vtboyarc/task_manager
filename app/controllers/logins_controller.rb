@@ -10,14 +10,14 @@ class LoginsController < ApplicationController
       if @user && @user.authenticate(params[:password]) #if user && is to keep from being nil
         session[:user_id] = @user.id
 
-        redirect_to root_path, notice: "Welcome back #{@user.name}."
+        redirect_to root_path, notice: "Welcome back #{@user.name}!"
       else
-        render "new", alert: "Invalid log in, please try again"
+        render "new", alert: "Invalid log in, please try again."
       end
   end
   
   def destroy
     session[:user_id] = nil
-    redirect_to tasks_path
+    redirect_to root_path
   end
 end

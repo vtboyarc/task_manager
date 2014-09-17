@@ -1,25 +1,44 @@
+    
+
 <div id="doc" class="yui-t2">
   <div id="hd">
-    <div id="header"><h1>Task Manager</h1></div>
+    <div id="header"><h1>Task, Inc.</h1></div>
   </div>
   <div id="bd">
     <div id="yui-main">
       <div class="yui-b">
-        <div class="yui-gc">
+      
           <div class="yui-u first">
-            <div class="content">(Tasks Here)</div>
-          </div>
-          <div class="yui-u">
-            <div class="content">(Session Data Here)</div>
-          </div>
+            <div class="content">
+              
+
+              <h2>Welcome to Task Manager!</h2>
+              <p>
+              Please choose a link from the list on the left to interact with that module.
+              </p>
+              
+              
+            </div>
+     
+          
         </div>
       </div>
     </div>
     <div class="yui-b">
-      <div id="secondary">(User Data Here)</div>
+      <div id="secondary"><h2>Home</h2>
+        <p><%= link_to("Projects", projects_path)%></p>
+        <p><%= link_to("Tasks", tasks_path)%></p>
+          <p><%= link_to("Tags", tags_path)%></p>
+          <p><%= link_to("Users", users_path)%></p>
+        </ul>
+      
+      
+      
+
     </div>
   </div>
   <div id="ft">
-    <div id="footer">(Footer Here)</div>
+    <div id="footer"></div>
   </div>
 </div>
+
