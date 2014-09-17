@@ -18,27 +18,67 @@ class TasksController < ApplicationController
   end
  
   def create
+    @users = User.all
     @task = Task.new(params[:task])
-    
+    @task.project_id = (params[:task][:project_id]).to_i
+    @task.tag_id = (params[:task][:tag_id]).to_i
+    @task.user_id = (params[:task][:user_id]).to_i
+    @user = User.find(@task.user_id)
     if @task.save
-      redirect_to tasks_path(@task.id), :notice => "You have saved a new task."
-    else
-      render "new"
+      Pony.mail({
+                :to => "#{@user.email}",
+                :via => :smtp,
+                :subject => "#{current_user.name}" + " has assigned you a task.",
+                :body => "Your task is " + "#{@task.name}" + ".",
+                :via_options => {
+                  :address              => 'smtp.gmail.com',
+                  :port                 => '587',
+                  :enable_starttls_auto => true,
+                  :user_name            => 'taskinc.taskmanager@gmail.com',
+                  :password             => 'ocsbudai',
+                  :authentication       => :plain, 
+                  :domain               => "localhost.localdomain" 
+        
+                  }
+                })
+        redirect_to tasks_path, notice: "Your email notification to #{@user.name} was sent successfully."
+      else
+        render "new", alert: "Invalid. Your task was not added."
+      end
     end
-  end
+    
   
   def edit
     @task = Task.find(params[:id])
   end
   
   def update
+    @users = User.all
     @task = Task.find(params[:id])
+    @user = User.find(@task.user_id)
     
     if @task.update_attributes(params[:task])
-      redirect_to tasks_path(@task.id), :notice => "You have upated this task."
+      Pony.mail({
+                :to => "#{@user.email}",
+                :via => :smtp,
+                :subject => "#{current_user.name}" + " has changed/updated a task.",
+                :body => "Please visit Task Manager and review Task: " + "#{@task.name}" + ".\n\nTask Description: " + "#{@task.description}",
+                :via_options => {
+                  :address              => 'smtp.gmail.com',
+                  :port                 => '587',
+                  :enable_starttls_auto => true,
+                  :user_name            => 'taskinc.taskmanager@gmail.com',
+                  :password             => 'ocsbudai',
+                  :authentication       => :plain, 
+                  :domain               => "localhost.localdomain" 
+        
+                  }
+                })
+      
+      redirect_to tasks_path(@task.id), :notice => "Your email notification to #{@user.name} was sent successfully."
     else
-      render "edit"
-    end
+      render "edit", alert: "Invalid. Your task was not updated."
+    end  
   end
 
   def destroy
