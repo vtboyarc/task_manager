@@ -18,21 +18,39 @@ class TasksController < ApplicationController
   end
  
   def create
-    @task = Task.new(params[:task])
-    @user = User.where(id: params[:task][:user_id])
-    @projects = Project.all
-    @tags = Tag.all
-    @users = User.all
-    binding.pry
-    if @task.save
-      binding.pry
-      Pony.mail(:to => "ocs.budai@gmail.com", :from => 'taskinc.taskmanager@gmail.com', :subject => 'Task Alert', :body => 'You have been assigned a new task #{@task.name}.')
-      binding.pry
-      redirect_to tasks_path(@task.id), :notice => "You have saved a new task."
-    else
-      render "new"
+      @task = Task.new(params[:task])
+      @task.project_id = (params[:project_id]).to_i
+      @task.category_id = (params[:category_id]).to_i
+      @task.user_id = (params[:user_id]).to_i
+      @user = User.find(@task.user_id)
+      @task.email = current_user.email
+      if @task.save
+        if @user.email == ""
+          "Your Email isn't working!"
+        else        
+          Pony.mail({
+            :to => "#{@user.email}",
+            :via => :smtp,
+            :subject => "#{current_user.email}" + "has assigned you a task.",
+            :body => "Your task is " + "#{@task.description}",
+            :via_options => {
+              :address              => 'smtp.gmail.com',
+              :port                 => '587',
+              :enable_starttls_auto => true,
+              :user_name            => 'taskinck_email(without the @gmail.com part)',
+              :password             => 'what_you_made_for_password_for_the_acccount',
+              :authentication       => :plain, 
+              :domain               => "localhost.localdomain" 
+        
+              }
+            })
+          end
+        redirect_to tasks_path, notice: "Your email notification has been sent successfully."
+      else
+        render "new", alert: "Invalid. Your task was not added."
+      end
     end
-  end 
+    
   
   def edit
     @task = Task.find(params[:id])
