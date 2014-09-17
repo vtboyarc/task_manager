@@ -18,7 +18,6 @@ class TasksController < ApplicationController
   end
  
   def create
-    @users = User.all
     @task = Task.new(params[:task])
     @task.project_id = (params[:task][:project_id]).to_i
     @task.tag_id = (params[:task][:tag_id]).to_i
