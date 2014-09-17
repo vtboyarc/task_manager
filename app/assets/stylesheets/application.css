@@ -146,17 +146,26 @@ body{text-align:center;}
 	background:#CDF0F9;
 	border-top:#FCECD2 2px solid;
 	margin:0;
-	padding:0;
+	padding-left:25px;
+  font-family:TrebuchetMS;
 	}
 	
 #secondary{
 	height:300px;
 	background:#FFFEDC;
 	border-top:#FCECD2 2px solid;
-	margin:0;
-	padding:0;
+  margin:0;
+	padding-left: 10px;
+  font-family:TrebuchetMS;
 	}
 	
+#secondary p {
+
+  padding-left:25px;
+  
+}
+
+}  
 #secondaryFull{
 	height:50px;
 	background-color:#FFFBC1;
