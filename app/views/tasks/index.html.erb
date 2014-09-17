@@ -1,12 +1,19 @@
 <div id="header"><h1>Tasks Index</h1></div>
 <div id="newsub">
-<p>
-<% @tasks.each do |task|%>
+<h2>Tasks</h2>
 
-	<p><%= link_to(task.name, task_path(task.id)) %></p>
-<%end%>
-</p>
-</div>
+<% if @user == true %>
 
-<p>
+	<% @user.tasks.each do |t| %>
+  
+    <p><%= link_to(t.task_name, task_path(t.id))  %></p>
+
+	<% end %>
+  
+<% else %>
+
+  <p><%= "No Tasks" %></p>  
+  
+<% end %>
+
 <%= link_to("Add a New Task", new_task_path) %></p>
