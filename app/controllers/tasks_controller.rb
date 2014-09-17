@@ -62,7 +62,7 @@ class TasksController < ApplicationController
                 :to => "#{@user.email}",
                 :via => :smtp,
                 :subject => "#{current_user.name}" + " has changed/updated a task.",
-                :body => "Please visit Task Manager and review " + "#{@task.name}" + "./n/nTask Description: " + "#{@task.description}",
+                :body => "Please visit Task Manager and review Task: " + "#{@task.name}" + ".\n\nTask Description: " + "#{@task.description}",
                 :via_options => {
                   :address              => 'smtp.gmail.com',
                   :port                 => '587',
@@ -83,6 +83,7 @@ class TasksController < ApplicationController
 
   def destroy
     @task = Task.find(params[:id])
+    @task.destroy
     redirect_to tasks_path, :notice => "You have deleted this task."
   end
 
@@ -91,6 +92,7 @@ class TasksController < ApplicationController
     @task = Task.find(params[:id])
     @project = Project.find(@task.project_id)
     @tag = Tag.find(@task.tag_id)
+    @comments = Comment.new
     @user = User.find(@task.user_id)
   end
   

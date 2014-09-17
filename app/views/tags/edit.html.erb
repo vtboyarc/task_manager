@@ -1,1 +1,16 @@
-TAGS INDEX
+<div id="header"><h1>Edit Tag</h1></div>
+<div id="newsub">
+
+<%= form_for @tag do |t| %>
+
+  <p>
+    <%= t.label :name %>
+    <%= t.text_field :name %>
+  </p>
+	
+	<%= t.submit value: "Edit Tag"%>
+
+<% end %>
+
+</div>
+<p><%= link_to("Cancel Edit", tags_path)%>

@@ -47,7 +47,7 @@ class UsersController < ApplicationController
     if @user == current_user
       redirect_to root_path, alert: "Users cannot delete themselves."
     else
-      @user.delete
+      @user.destroy
     redirect_to users_path, notice: "User successfully deleted."
   end
   

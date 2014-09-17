@@ -1,0 +1,12 @@
+<%= form_for @comment do |c| %>
+
+  <p>
+    <%= c.label :message %>
+  </p>
+  <p>
+    <%= c.text_area :message %>
+  </p>
+  
+  <%= c.submit value: "Edit Comment"%>
+  
+<% end %>
