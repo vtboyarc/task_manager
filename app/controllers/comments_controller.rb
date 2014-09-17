@@ -16,7 +16,7 @@ class CommentsController < ApplicationController
     @comment = Comment.new(params[:comment])
     
     if @comment.save
-      redirect_to comments_path(@comment.id), :notice => "You have saved a new comment."
+      redirect_to task_path(@comment.task_id), :notice => "You have saved a new comment."
     else
       render "new"
     end
@@ -24,13 +24,15 @@ class CommentsController < ApplicationController
   
   def edit
     @comment = Comment.find(params[:id])
+    @task = Task.find(@comment.task_id)
   end
   
   def update
     @comment = Comment.find(params[:id])
+    @task = Task.find(@comment.task_id)
     
     if @comment.update_attributes(params[:comment])
-      redirect_to comments_path(@comment.id), :notice => "You have upated this comment."
+      redirect_to task_path(@comment.task_id), :notice => "You have upated this comment."
     else
       render "edit"
     end
@@ -38,7 +40,8 @@ class CommentsController < ApplicationController
 
   def destroy
     @comment = Comment.find(params[:id])
-    redirect_to comments_path, :notice => "You have deleted this comment."
+    @task = Task.find(@comment.task_id)
+    redirect_to task_path(@task), :notice => "You have deleted this comment."
   end
 
   

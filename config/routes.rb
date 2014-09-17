@@ -23,7 +23,7 @@ TaskManager::Application.routes.draw do
   
    delete "projects/:name/delete" => 'projects#destroy', :as => "delete_project"
    
-   resources :users, :tasks, :tags
+   resources :users, :tasks, :tags, :comments
 
    
 end

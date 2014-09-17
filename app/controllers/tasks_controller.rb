@@ -35,7 +35,7 @@ class TasksController < ApplicationController
     @task = Task.find(params[:id])
     
     if @task.update_attributes(params[:task])
-      redirect_to tasks_path(@task.id), :notice => "You have upated this task."
+      redirect_to task_path(@task.id), :notice => "You have upated this task."
     else
       render "edit"
     end
