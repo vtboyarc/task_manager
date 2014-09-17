@@ -28,6 +28,7 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 
 gem 'pry-rails'
 
+gem 'pony'
 
 # Use unicorn as the app server
 # gem 'unicorn'
