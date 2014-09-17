@@ -1,6 +1,8 @@
-<h1><%= @project.name %>'s Details</h1> 
-	<p>Name: <%= @project.name %></p>
-	<p>Description: <%= @project.desc %></p>
+<div id="header"><h1>Project Details</h1></div>
+<div id="newsub">
+  
+<h2><%= @project.name %></h2> 
+		<p>Description: <%= @project.desc %></p>
   
   <p>Tasks:</br>
 
@@ -11,8 +13,13 @@
 	  
       <% end %>
   
+</div>
   
+<<<<<<< HEAD
 <p><%= link_to("Edit Task Project", edit_project_path) %></p>
+=======
+<%= link_to("Edit Project", edit_project_path) %>
+>>>>>>> master
 <p><%= link_to("All projects", projects_path)%></p>
 <p><%= link_to("Delete Project", project_path, :method => :delete) %></p>
 

@@ -1,10 +1,9 @@
-<div id="header"><h1><%= @task.name %>'s Details</h1></div>
+<div id="header"><h1>Task Details</h1></div>
 <div id="newsub">
 
 
 	<p>Name: <%= @task.name %></p>
 	<p>Description: <%= @task.description %></p>
-	<p>Name: <%= @task.name %></p>
 	<p>Priority: <%= @task.priority %></p>
 	<p>Due Date: <%= @task.due_date %></p>
   <p>Project: <%= @project.name %></p>
@@ -24,6 +23,7 @@
   
   <%= form_for @comments do |c| %>
 
+<<<<<<< HEAD
     <p>
       <%= c.label :message %></p>
     <p>
@@ -38,8 +38,10 @@
 
   <% end %>
 
+=======
+>>>>>>> master
 </div>
 
-<p><%= link_to("Edit Task Project", edit_task_path) %></p>
+<p><%= link_to("Edit Task", edit_task_path) %></p>
 <p><%= link_to("Delete Task", task_path, :method => :delete) %></p>
 
