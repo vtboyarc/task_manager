@@ -15,5 +15,8 @@
   
 </div>
   
-<p><%= link_to("Edit Project", edit_project_path) %></p>
-<p><%= link_to("Return to Project Index", projects_path)%></p>
+<%= link_to("Edit Project", edit_project_path) %>
+<p><%= link_to("All projects", projects_path)%></p>
+<p><%= link_to("Delete Project", project_path, :method => :delete) %></p>
+
+<p><%= link_to('Home', root_path) %></p>
