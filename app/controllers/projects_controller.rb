@@ -21,7 +21,7 @@ class ProjectsController < ApplicationController
   end
   
   def edit
-    @project = Project.find(params[:name])
+    @project = Project.find(params[:id])
   end
   
   def update
@@ -35,7 +35,7 @@ class ProjectsController < ApplicationController
   end
 
   def destroy
-    @project = Project.find(params[:name])
+    @project = Project.find(params[:id])
     redirect_to projects_path, :notice => "You have deleted this project."
   end
   
