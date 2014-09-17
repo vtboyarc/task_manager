@@ -10,15 +10,27 @@
   <p>Project: <%= @project.name %></p>
   <p>Tag: <%= @tag.name %></p>
   
-	<p>Assigned To: <%= @user.name %> </p>
+	<% if @user.name != nil %>
+    <p>Assigned To: <%= @user.name %> </p>
+  <% end %>
   
-  <% @comments.each do |c| %>
+  <% @task.comments.each do |c| %>
   
     <p><%= c.message %></p>
   
   <% end %>
   
-  <%= link_to("Add comment", new_comment_path) %>
+  <%= form_for @comments do |c| %>
+
+    <p>
+      <%= c.label :message %></p>
+    <p>
+      <%= c.text_area :message %>
+    </p>
+
+    <%= c.submit value: "Create Comment" %>
+
+  <% end %>
 
 </div>
 
