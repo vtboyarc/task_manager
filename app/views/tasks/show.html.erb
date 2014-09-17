@@ -8,7 +8,34 @@
 	<p>Due Date: <%= @task.due_date %></p>
   <p>Project: <%= @project.name %></p>
   <p>Tag: <%= @tag.name %></p>
-	<p>Assigned To: <%= @user.name %> </p>
+  <p>Assigned To: <%= @user.name %> </p>
+
+  
+  <b><p>COMMENTS</p></b>
+  
+  <% @task.comments.each do |c| %>
+  
+    <a><%= c.message %></a>
+    <a><%= link_to("Edit", edit_comment_path(c.id)) %></a>
+    <a><%= link_to("Delete", comment_path(c.id), :method => :delete) %></a><br/><br/>
+  
+  <% end %>
+  
+  <%= form_for @comments do |c| %>
+
+    <p>
+      <%= c.label :message %></p>
+    <p>
+      <%= c.text_area :message %>
+    </p>
+    
+    <%= c.hidden_field :user_id, { :value => current_user } %>
+    <%= c.hidden_field :task_id, { :value => @task.id } %>
+    
+
+    <%= c.submit value: "Create Comment" %>
+
+  <% end %>
 
 </div>
 

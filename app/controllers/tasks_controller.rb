@@ -91,6 +91,7 @@ class TasksController < ApplicationController
     @task = Task.find(params[:id])
     @project = Project.find(@task.project_id)
     @tag = Tag.find(@task.tag_id)
+    @comments = Comment.new
     @user = User.find(@task.user_id)
   end
   
