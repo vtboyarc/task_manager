@@ -1,7 +1,7 @@
 <div id="header"><h1>Create New Task</h1></div>
 <div id="newsub">
 
-<%= form_for @task do |t| %>
+<%= form_for @tasks.each do |t| %>
 
   <p>
     <%= t.label :name %>

@@ -6,6 +6,10 @@ class TasksController < ApplicationController
     @tasks = Task.all
   end
   
+  def find
+    @task = Task.new
+  end
+  
   def new
     @task = Task.new
     @projects = Project.all
