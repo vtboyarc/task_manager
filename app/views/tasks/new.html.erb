@@ -1,35 +1,35 @@
 <div id="header"><h1>Create New Task</h1></div>
 <div id="newsub">
 
-<%= form_for @tasks.each do |t| %>
+<%= form_for @task do |t| %>
 
   <p>
     <%= t.label :name %>
     <%= t.text_field :name %>
   </p>
-	<p>
+<p>
     <%= t.label :description %>
     <%= t.text_field :description %>
   </p>
-	<p>
+<p>
     <%= t.label :priority %>
     <%= t.text_field :priority %>
   </p>
-	<p>
+<p>
     <%= t.label :due_date %>
     <%= t.text_field :due_date %>
   </p>
 
-	<p>
+<p>
     <%= t.label :project %>
     <%= t.collection_select :project_id, Project.all, :id, :name %>
   </p>
-	<p>
+<p>
     <%= t.label :tag %>
     <%= t.collection_select :tag_id, Tag.all, :id, :name %>
   </p>
   
-   <p> 
+  <p> 
   <%= t.submit value: "Create Task" %>
 
 <% end %>
