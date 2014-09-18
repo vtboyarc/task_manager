@@ -18,6 +18,10 @@ TaskManager::Application.routes.draw do
 
    delete "projects/:name/delete" => 'projects#destroy', :as => "delete_project"
    get "project/:name" => 'projects#show', :as => "project"
+   
+   
+   post "create_user" => 'users#create', :as => "create_user"
+     get "signup" => 'users#new', :as => "signup"
 
    resources :users, :tasks, :tags, :comments
    resources :activities
