@@ -3,5 +3,19 @@
 
       $( "#sortable" ).sortable();
       $( "#sortable" ).disableSelection();
+      
+      $("#draggable").draggable({
+                 connectToSortable: 'ul#myList',
+                 helper:'clone'
+             });
+
+             $("#myList").sortable({
+                 stop: function(event, ui){
+                     //put your AJAX call here
+                     
+                 }
+             });
  
 });
+
+
