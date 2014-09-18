@@ -35,7 +35,7 @@ class TagsController < ApplicationController
   end
 
   def destroy
-    @tag = Tag.find_by_name(params[:id])
+    @tag = Tag.find(params[:id])
     @tag.delete
     redirect_to tags_path, :notice => "You have deleted this tag."
 
@@ -43,7 +43,7 @@ class TagsController < ApplicationController
 
 
   def show
-    @tag = Tag.find_by_name(params[:id])
+    @tag = Tag.find(params[:id])
   end
   
 end
