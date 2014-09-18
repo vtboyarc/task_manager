@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>TaskManager</title>
+  <title>Task, Inc.</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
@@ -18,10 +18,11 @@
   <div id="navbar">
     <ul>
       <li><%= link_to("Home", root_path) %></li>
-      <li><%= link_to("Users", users_path)%></li>
+
       <li><%= link_to("Projects", projects_path)%></li>
       <li><%= link_to("Tasks", tasks_path)%></li>
       <li><%= link_to("Tags", tags_path)%></li>
+            <li><%= link_to("Users", users_path)%></li>
     </ul>
   </div>
   <div id="clearfloat">
