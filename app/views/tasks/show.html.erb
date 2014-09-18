@@ -14,6 +14,9 @@
           <div class="yui-u first">
             <div class="content">
               
+              <div id="contentall">
+                <div id="content1">
+              
 
               
 
@@ -26,8 +29,13 @@
             <p>Tag: <%= @tag.name %></p>
             <p>Assigned To: <%= @user.name %> </p>
 						<p>Completed? <%= @task.completed %></p>
+            
+            </div>
+            
+            <div id="content2">
             <div id="commentstyle">
-            <b><h2>Comments</h2></b>
+              
+            <b><h3>Comments</h3></b>
   
             <% @task.comments.each do |c| %>
   
@@ -36,11 +44,12 @@
               <a><%= link_to("Delete", comment_path(c.id), :method => :delete) %></a><br/><br/>
   
             <% end %>
+          
   
             <%= form_for @comments do |c| %>
 
               <p>
-                <%= c.label :message %></p>
+                <%= c.label :add_a_comment %></p>
               <p>
                 <%= c.text_area :message %>
               </p>
@@ -52,6 +61,10 @@
               <%= c.submit value: "Submit Comment" %>
 
             <% end %>
+          </div>
+          <div id="clearcontent"></div>
+        </div>
+        
             
 
               

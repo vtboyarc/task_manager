@@ -262,3 +262,23 @@ input {
   clear:both;
 }
 
+#contentall{
+  
+}
+
+#content1{
+
+  width:50%;
+  float:left;
+}
+
+#content2{
+  width:50%;
+  float:right;
+  
+  
+}
+
+#clearcontent {
+  clear:both;
+}
