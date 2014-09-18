@@ -23,6 +23,7 @@ class TasksController < ApplicationController
     @task.project_id = (params[:task][:project_id]).to_i
     @task.tag_id = (params[:task][:tag_id]).to_i
     @task.user_id = (params[:task][:user_id]).to_i
+    @task.completed = (params[:task][:completed])
     @user = User.find(@task.user_id)
     if @task.save
       Pony.mail({
