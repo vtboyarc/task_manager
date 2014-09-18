@@ -12,6 +12,6 @@ class Task < ActiveRecord::Base
   has_many :comments
   
   
-  validates :name, :description, :priority, presence: true
+  validates :name, :description, :project_id, :tag_id, :user_id, presence: true
       
 end
