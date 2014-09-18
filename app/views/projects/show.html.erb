@@ -1,62 +1,100 @@
-<div id="header"><h1>Project Details</h1></div>
-<div id="newsub">
-
-<h2><%= @project.name %></h2>
-    <p>Description: <%= @project.desc %></p>
-
-  <p>Tasks:</br>
 
 
-      <% @project.tasks.each do |t| %>
 
-        <p><%= link_to(t.name, task_path(t.id))%></p>
+<div id="doc" class="yui-t2">
+  <div id="hd">
+    <div id="header"><h1>Task, Inc. - Task Manager</h1></div>
+  </div>
+  <div id="bd">
+    <div id="yui-main">
+      <div class="yui-b">
+      
+          <div class="yui-u first">
+            <div class="content">
+              
 
-      <% end %>
 
+
+              <p>Name: <%= @project.name %></p> 
+              		<p>Description: <%= @project.desc %></p>
+  
+                <p>Tasks:<br>
+
+
+              <div id="contentindent">
+
+
+                    <% @project.tasks.each do |t| %>
+	
+                      <p><%= link_to(t.name, task_path(t.id))%></p>
+	  
+                    <% end %>
+                  </div>
+<h3>Add a new task to this project:</h3>
+                    <%= form_for @task do |t| %>
+
+                      <p>
+                        <%= t.label :name %>
+                        <%= t.text_field :name %>
+                      </p>
+                    <p>
+                        <%= t.label :description %>
+                        <%= t.text_field :description %>
+                      </p>
+                    <p>
+                        <%= t.label :priority %>
+                        <%= t.text_field :priority %>
+                      </p>
+                    <p>
+                        <%= t.label :due_date %>
+                        <%= t.text_field :due_date %>
+                      </p>
+
+                    <p>
+                        <%= t.label :project %>
+                        <%= t.collection_select :project_id, Project.all, :id, :name %>
+                      </p>
+                    <p>
+                        <%= t.label :tag %>
+                        <%= t.collection_select :tag_id, Tag.all, :id, :name %>
+                      </p>
+                    	<p>
+                        <%= t.label :assigned_to %>
+                        <%= t.collection_select :user_id, User.all, :id, :name %>
+                      </p>
+  
+                      <p> 
+                      <%= t.submit value: "Create Task" %>
+
+
+                    <% end %>
+              
+
+              </p>
+              
+              
+            </div>
+     
+          
+        </div>
+      </div>
+    </div>
+    <div class="yui-b">
+      <div id="secondary"><h2>Project Details</h2>
+        
+      
+            <p><%= link_to("Edit this Project", edit_project_path) %></p>
+            <p><%= link_to("Delete this Project", project_path, :method => :delete) %></p>  
+            <p><%= link_to("Create a New Project", new_project_path) %></p>
+            <p><%= link_to("Return to Project Index", projects_path) %></p>
+            <p><%= link_to("Return to Home", root_path) %></p>
+      
+      
+      </div>
+
+    </div>
+  </div>
+  <div id="ft">
+    <div id="footer"></div>
+  </div>
 </div>
-
-  <div id="header"><h1>Add a Task for this Project</h1></div>
-  <div id="newsub">
-
-  <%= form_for @task do |t| %>
-
-    <p>
-      <%= t.label :name %>
-      <%= t.text_field :name %>
-    </p>
-  <p>
-      <%= t.label :description %>
-      <%= t.text_field :description %>
-    </p>
-  <p>
-      <%= t.label :priority %>
-      <%= t.text_field :priority %>
-    </p>
-  <p>
-      <%= t.label :due_date %>
-      <%= t.text_field :due_date %>
-    </p>
-
-  <p>
-      <%= t.label :project %>
-      <%= t.collection_select :project_id, Project.all, :id, :name %>
-    </p>
-  <p>
-      <%= t.label :tag %>
-      <%= t.collection_select :tag_id, Tag.all, :id, :name %>
-    </p>
-    <p>
-      <%= t.label :assigned_to %>
-      <%= t.collection_select :user_id, User.all, :id, :name %>
-    </p>
-
-    <p>
-    <%= t.submit value: "Create Task" %>
-
-  <% end %>
-
-<%= link_to("Edit Project", edit_project_path) %>
-<p><%= link_to("All projects", projects_path)%></p>
-<p><%= link_to("Delete Project", delete_project_path, :method => :delete) %></p>
-
-<p><%= link_to('Home', root_path) %></p>

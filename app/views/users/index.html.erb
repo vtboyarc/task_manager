@@ -1,11 +1,47 @@
-<div id="header"><h1>User Index</h1></div>
-<div id="newsub">
+
+<div id="doc" class="yui-t2">
+  <div id="hd">
+    <div id="header"><h1>Task, Inc. - Task Manager</h1></div>
+  </div>
+  <div id="bd">
+    <div id="yui-main">
+      <div class="yui-b">
+      
+          <div class="yui-u first">
+            <div class="content">
+              
 
 
+              <p>
 
-<% @users.each do |user|%>
+              <% @users.each do |user|%>
 
-	<p><%= link_to(user.name, user_path(user.id)) %></p>
-<%end%>
-</div><p>
-<%= link_to("New User", new_user_path) %></p>
+              	<p><%= link_to(user.name, user_path(user.id)) %></p>
+              <%end%>
+              
+              </p>
+              
+              
+            </div>
+     
+          
+        </div>
+      </div>
+    </div>
+    <div class="yui-b">
+      <div id="secondary"><h2>User Index</h2>
+        
+      
+           
+            <p><%= link_to("Return to Home", root_path) %></p>
+      
+      
+      </div>
+
+    </div>
+  </div>
+  <div id="ft">
+    <div id="footer"></div>
+  </div>
+</div>
+

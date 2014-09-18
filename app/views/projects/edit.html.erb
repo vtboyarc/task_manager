@@ -1,23 +1,68 @@
-<div id="header"><h1>Edit Project</h1></div>
-<div id="newsub">
 
-<%= form_for @project do |t| %>
 
-  <p>
-    <%= t.label :name %>
-    <%= t.text_field :name %>
-  </p>
+
+
+<div id="doc" class="yui-t2">
+  <div id="hd">
+    <div id="header"><h1>Task, Inc. - Task Manager</h1></div>
+  </div>
+  <div id="bd">
+    <div id="yui-main">
+      <div class="yui-b">
+      
+          <div class="yui-u first">
+            <div class="content">
+              
+
+              
+              <%= form_for @project do |t| %>
+
+                <p>
+                  <%= t.label :name %>
+                  <%= t.text_field :name %>
+                </p>
 	
-  <p>
-    <%= t.label :description %>
-    <%= t.text_field :desc %>
-  </p>
+                <p>
+                  <%= t.label :description %>
+                  <%= t.text_field :desc %>
+                </p>
 	
-	<%= t.submit value: "Save Changes" %>
+              	<%= t.submit value: "Save Changes" %>
 
-<% end %>
+              <% end %>
+              
+              
+
+              
+              
+              
+            </div>
+     
+          
+        </div>
+      </div>
+    </div>
+    <div class="yui-b">
+      <div id="secondary"><h2>Edit Project</h2>
+        
+      
+            
+            <p><%= link_to("Cancel Edit", tasks_path) %></p>
+
+            <p><%= link_to("Return to Home", root_path) %></p>
+      
+      
+      </div>
+
+    </div>
+  </div>
+  <div id="ft">
+    <div id="footer"></div>
+  </div>
 </div>
-<p>
-<%= link_to("Cancel Edit", tasks_path) %></p>
-	
-<p><%= link_to("Delete Project", project_path, :method => :delete) %></p>
+
+
+
+</div>
+
+

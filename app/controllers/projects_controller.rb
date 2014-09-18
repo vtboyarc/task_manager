@@ -14,7 +14,7 @@ class ProjectsController < ApplicationController
     @project = Project.new(params[:project])
     
     if @project.save
-      redirect_to projects_path(@project.id), :notice => "You have saved a new project."
+      redirect_to projects_path(@project.name), :notice => "You have saved a new project."
     else
       render "new"
     end
@@ -25,10 +25,10 @@ class ProjectsController < ApplicationController
   end
   
   def update
-    @project = Project.find_by_name(params[:name])
+    @project = Project.find_by_name(params[:project][:name])
     
     if @project.update_attributes(params[:project])
-      redirect_to projects_path(@project.id), :notice => "You have upated this project."
+      redirect_to project_path(@project.name), :notice => "You have upated this project."
     else
       render "edit"
     end
@@ -45,5 +45,6 @@ class ProjectsController < ApplicationController
     @project = Project.find_by_name(params[:name])
     @tasks = Task.all
     @task = Task.new
+
   end
 end
