@@ -1,5 +1,6 @@
 
 
+
 <div id="doc" class="yui-t2">
   <div id="hd">
     <div id="header"><h1>Task, Inc. - Task Manager</h1></div>
@@ -20,7 +21,9 @@
   
                 <p>Tasks:<br>
 
+
               <div id="contentindent">
+
 
                     <% @project.tasks.each do |t| %>
 	
@@ -67,6 +70,7 @@
   
                       <p> 
                       <%= t.submit value: "Create Task" %>
+
 
                     <% end %>
               
