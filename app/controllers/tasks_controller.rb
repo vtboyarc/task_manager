@@ -42,7 +42,8 @@ class TasksController < ApplicationController
         
                   }
                 })
-        redirect_to tasks_path, notice: "Your email notification to #{@user.name} was sent successfully."
+                @project = Project.find(@task.project_id)
+        redirect_to project_path(@project.name), notice: "Your email notification to #{@user.name} was sent successfully."
       else
         render "new", alert: "Invalid. Your task was not added."
       end
@@ -76,7 +77,7 @@ class TasksController < ApplicationController
                   }
                 })
       
-      redirect_to tasks_path(@task.id), :notice => "Your email notification to #{@user.name} was sent successfully."
+      redirect_to project_path(@task.project_id), :notice => "Your email notification to #{@user.name} was sent successfully."
     else
       render "edit", alert: "Invalid. Your task was not updated."
     end  
