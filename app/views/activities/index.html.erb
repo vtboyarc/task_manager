@@ -1,10 +1,62 @@
-<h1>TaskManager Feed</h1>
+    
+    
 
-<% @activities.each do |activity|%>
-	<div class="activity">
-		<%= link_to activity.owner.name, activity.owner if activity.owner %>
-		<%= render_activity activity%>
-		
-		
-	</div>	
-<% end %>
+<div id="doc" class="yui-t2">
+  <div id="hd">
+    <div id="header"><h1>Task, Inc.</h1></div>
+  </div>
+  <div id="bd">
+    <div id="yui-main">
+      <div class="yui-b">
+      
+          <div class="yui-u first">
+            <div class="content">
+              
+
+              <h2>Welcome to Task Manager!</h2>
+              <p>
+              Please choose a link from the list on the left to interact with that module.
+              </p>
+              <h3>Recent Activity</h3>
+             
+              <% @activities.each do |activity|%>
+              <div class="activity">
+              <%= link_to activity.owner.name, activity.owner if activity.owner %>
+              <%= render_activity activity%>
+
+
+              </div> 
+              <% end %>
+              
+              
+            </div>
+     
+          
+        </div>
+      </div>
+    </div>
+    <div class="yui-b">
+      <div id="secondary"><h2>Home</h2>
+        <p><%= link_to("Projects", projects_path)%></p>
+        <p><%= link_to("Tasks", tasks_path)%></p>
+          <p><%= link_to("Tags", tags_path)%></p>
+          <p><%= link_to("Users", users_path)%></p>
+					
+        </ul>
+      
+      
+      
+
+    </div>
+  </div>
+  <div id="ft">
+    <div id="footer"></div>
+  </div>
+</div>
+
+
+              
+                  
+              	
+              
+        
