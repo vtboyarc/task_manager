@@ -8,3 +8,24 @@
   }
 }
 
+#contentall{
+  width:400px;
+}
+
+#content1{
+
+  width:50%;
+  float:left;
+  
+
+  
+  
+}
+
+#content2{
+  width:50%;
+  float:right;
+  
+  
+}
+
