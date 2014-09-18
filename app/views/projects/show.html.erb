@@ -1,20 +1,20 @@
 <div id="header"><h1>Project Details</h1></div>
 <div id="newsub">
-  
-<h2><%= @project.name %></h2> 
-		<p>Description: <%= @project.desc %></p>
-  
+
+<h2><%= @project.name %></h2>
+    <p>Description: <%= @project.desc %></p>
+
   <p>Tasks:</br>
 
 
       <% @project.tasks.each do |t| %>
-	
+
         <p><%= link_to(t.name, task_path(t.id))%></p>
-	  
+
       <% end %>
-  
+
 </div>
-  
+
   <div id="header"><h1>Add a Task for this Project</h1></div>
   <div id="newsub">
 
@@ -45,12 +45,12 @@
       <%= t.label :tag %>
       <%= t.collection_select :tag_id, Tag.all, :id, :name %>
     </p>
-  	<p>
+    <p>
       <%= t.label :assigned_to %>
       <%= t.collection_select :user_id, User.all, :id, :name %>
     </p>
-  
-    <p> 
+
+    <p>
     <%= t.submit value: "Create Task" %>
 
   <% end %>
