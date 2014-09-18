@@ -1,4 +1,6 @@
 class Task < ActiveRecord::Base
+  include PublicActivity::Model
+  tracked owner: ->(controller, model) { controller && controller.current_user }
 
   attr_accessible :description, :due_date, :name, :priority, :project_id, :tag_id, :user_id
   
