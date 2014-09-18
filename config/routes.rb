@@ -1,6 +1,6 @@
 TaskManager::Application.routes.draw do
   
-  root :to => 'pages#index'
+  root :to => 'activities#index'
 
   get "login" => 'logins#new', :as => "login"
   post "login" => 'logins#create', :as => "create_login" 
