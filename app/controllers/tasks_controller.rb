@@ -77,6 +77,7 @@ class TasksController < ApplicationController
                 })
       
       redirect_to tasks_path(@task.id), :notice => "Your email notification to #{@user.name} was sent successfully."
+      binding.pry
     else
       render "edit", alert: "Invalid. Your task was not updated."
     end  

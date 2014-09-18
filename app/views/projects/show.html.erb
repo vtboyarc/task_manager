@@ -10,9 +10,6 @@
       
           <div class="yui-u first">
             <div class="content">
-              
-
-
 
               <p>Name: <%= @project.name %></p> 
               		<p>Description: <%= @project.desc %></p>
@@ -27,7 +24,8 @@
 	  
                     <% end %>
                   </div>
-<h3>Add a new task to this project:</h3>
+									
+						<h3>Add a new task to this project:</h3>
                     <%= form_for @task do |t| %>
 
                       <p>
