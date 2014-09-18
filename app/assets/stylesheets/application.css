@@ -206,11 +206,11 @@ body{
 }
 
 #notice {
-  text-color:#118C2A;
+  font-color:green;
 }
 
 #alert {
-  text-color:#C30B0F;
+  font-color:red;
 }
 
 #userbar {
