@@ -25,6 +25,7 @@
             <p>Project: <%= @project.name %></p>
             <p>Tag: <%= @tag.name %></p>
             <p>Assigned To: <%= @user.name %> </p>
+						<p>Completed? <%= @task.completed %></p>
             <div id="commentstyle">
             <b><h2>Comments</h2></b>
   
@@ -65,7 +66,7 @@
     <div class="yui-b">
       <div id="secondary"><h2>Task Details</h2>
         
-      
+            <p><%= link_to("Return to Projects", projects_path) %></p>
             <p><%= link_to("Edit this Task", edit_task_path) %></p>
             <p><%= link_to("Delete this Task", task_path, :method => :delete) %></p>  
             <p><%= link_to("Create a New Task", new_task_path) %></p>

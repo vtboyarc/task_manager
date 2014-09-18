@@ -10,11 +10,25 @@
             <div class="content">
               
 
-              <p>
-              <% @projects.each do |x|%>
 
-              	<p><%= link_to(x.name, project_path(x.name)) %></p>
+<p>
+  <% if current_user %>
+
+      
+<% @projects.each do |project|%>
+
+
+              	<p><%= link_to(project.name, project_path(project.name)) %></p>
               <%end%>
+              
+              
+
+              <% else %>
+
+                <p><%= "No Projects yet"%></p>
+  
+              <% end %>
+
 
 
               </p>
