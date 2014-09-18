@@ -21,11 +21,11 @@ class TagsController < ApplicationController
   end
 
   def edit
-    @tag = Tag.find(params[:id])
+    @tag = Tag.find_by_name(params[:name])
   end
 
   def update
-    @tag = Tag.find(params[:id])
+    @tag = Tag.find_by_name(params[:name])
 
     if @tag.update_attributes(params[:tag])
       redirect_to tags_path(@tag.id), :notice => "You have upated this tag."
@@ -35,7 +35,7 @@ class TagsController < ApplicationController
   end
 
   def destroy
-    @tag = Tag.find(params[:id])
+    @tag = Tag.find_by_name(params[:name])
     @tag.delete
     redirect_to tags_path, :notice => "You have deleted this tag."
 
@@ -43,7 +43,7 @@ class TagsController < ApplicationController
 
 
   def show
-    @tag = Tag.find(params[:id])
+    @tag = Tag.find_by_name(params[:name])
   end
   
 end

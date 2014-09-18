@@ -1,23 +1,61 @@
-<div id="header"><h1>Project Details</h1></div>
-<div id="newsub">
-  
-<h2><%= @project.name %></h2> 
-		<p>Description: <%= @project.desc %></p>
-  
-  <p>Tasks:</br>
 
 
-      <% @project.tasks.each do |t| %>
+
+
+
+<div id="doc" class="yui-t2">
+  <div id="hd">
+    <div id="header"><h1>Task, Inc. - Task Manager</h1></div>
+  </div>
+  <div id="bd">
+    <div id="yui-main">
+      <div class="yui-b">
+      
+          <div class="yui-u first">
+            <div class="content">
+              
+
+
+
+              <p>Name: <%= @project.name %></p> 
+              		<p>Description: <%= @project.desc %></p>
+  
+                <p>Tasks:<br>
+
+              <div id="contentindent">
+                    <% @project.tasks.each do |t| %>
 	
-        <p><%= link_to(t.name, task_path(t.id))%></p>
+                      <p><%= link_to(t.name, task_path(t.id))%></p>
 	  
-      <% end %>
+                    <% end %>
   
+              </div>
+              
+              
+            </div>
+     
+          
+        </div>
+      </div>
+    </div>
+    <div class="yui-b">
+      <div id="secondary"><h2>Project Details</h2>
+        
+      
+            <p><%= link_to("Edit this Project", edit_project_path) %></p>
+            <p><%= link_to("Delete this Project", project_path, :method => :delete) %></p>  
+            <p><%= link_to("Create a New Project", new_project_path) %></p>
+            <p><%= link_to("Return to Project Index", projects_path) %></p>
+            <p><%= link_to("Return to Home", root_path) %></p>
+      
+      
+      </div>
+
+    </div>
+  </div>
+  <div id="ft">
+    <div id="footer"></div>
+  </div>
 </div>
-  
 
-<%= link_to("Edit Project", edit_project_path) %>
-<p><%= link_to("All projects", projects_path)%></p>
-<p><%= link_to("Delete Project", delete_project_path, :method => :delete) %></p>
 
-<p><%= link_to('Home', root_path) %></p>

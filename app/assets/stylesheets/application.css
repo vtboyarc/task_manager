@@ -177,6 +177,13 @@ body{
   
 }
 
+#contentindent {
+  padding-left:25px;
+  align-left;
+  margin-left:25px;
+}
+
+
 }  
 #secondaryFull{
 	height:50px;
