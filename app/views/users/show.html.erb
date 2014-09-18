@@ -1,6 +1,4 @@
 
-
-
 <div id="doc" class="yui-t2">
   <div id="hd">
     <div id="header"><h1>Task, Inc. - Task Manager</h1></div>
@@ -19,6 +17,7 @@
             	<p>Password: Not Shown</p>
               
 
+
               </p>
               
               
@@ -33,9 +32,12 @@
         
       
             <p><%= link_to("Edit this User", edit_user_path) %></p>
+
             <p><%= link_to("Delete this User", user_path, :method => :delete) %></p>  
-            <p><%= link_to("Return to User Index", tags_path) %></p>
+            <p><%= link_to("Return to User Index", users_path) %></p>
             <p><%= link_to("Return to Home", root_path) %></p>
+            
+
       
       
       </div>
@@ -46,6 +48,3 @@
     <div id="footer"></div>
   </div>
 </div>
-
-
-

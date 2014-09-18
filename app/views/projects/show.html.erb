@@ -1,8 +1,5 @@
 
 
-
-
-
 <div id="doc" class="yui-t2">
   <div id="hd">
     <div id="header"><h1>Task, Inc. - Task Manager</h1></div>
@@ -23,13 +20,53 @@
                 <p>Tasks:<br>
 
               <div id="contentindent">
+
                     <% @project.tasks.each do |t| %>
 	
                       <p><%= link_to(t.name, task_path(t.id))%></p>
 	  
                     <% end %>
+                  </div>
+
+                    <%= form_for @task do |t| %>
+
+                      <p>
+                        <%= t.label :name %>
+                        <%= t.text_field :name %>
+                      </p>
+                    <p>
+                        <%= t.label :description %>
+                        <%= t.text_field :description %>
+                      </p>
+                    <p>
+                        <%= t.label :priority %>
+                        <%= t.text_field :priority %>
+                      </p>
+                    <p>
+                        <%= t.label :due_date %>
+                        <%= t.text_field :due_date %>
+                      </p>
+
+                    <p>
+                        <%= t.label :project %>
+                        <%= t.collection_select :project_id, Project.all, :id, :name %>
+                      </p>
+                    <p>
+                        <%= t.label :tag %>
+                        <%= t.collection_select :tag_id, Tag.all, :id, :name %>
+                      </p>
+                    	<p>
+                        <%= t.label :assigned_to %>
+                        <%= t.collection_select :user_id, User.all, :id, :name %>
+                      </p>
   
-              </div>
+                      <p> 
+                      <%= t.submit value: "Create Task" %>
+
+                    <% end %>
+              
+
+              </p>
               
               
             </div>
@@ -57,5 +94,3 @@
     <div id="footer"></div>
   </div>
 </div>
-
-

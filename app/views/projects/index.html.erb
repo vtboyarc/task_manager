@@ -1,5 +1,4 @@
 
-
 <div id="doc" class="yui-t2">
   <div id="hd">
     <div id="header"><h1>Task, Inc. - Task Manager</h1></div>
@@ -11,6 +10,7 @@
           <div class="yui-u first">
             <div class="content">
               
+
 
               <p>
               <% @projects.each do |project|%>
@@ -24,6 +24,24 @@
               </div>
               </p>
               
+              <% @projects.each do |project|%>
+
+              	<p><%= link_to(project.name, project_path(project.name)) %></p>
+              <%end%>
+              
+              
+
+              <% else %>
+
+                <p><%= "No Projects yet"%></p>
+  
+              <% end %>
+
+
+
+              </p>
+              
+
             </div>
      
           
@@ -46,5 +64,3 @@
     <div id="footer"></div>
   </div>
 </div>
-
-

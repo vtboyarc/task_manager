@@ -1,15 +1,16 @@
 class ApplicationController < ActionController::Base
+  include PublicActivity::StoreController
+  
   protect_from_forgery
-
 
   before_filter :authorize
 
-  
   def authorize
     if current_user.nil?
       redirect_to login_path, :alert => "You need to log in first!"
     end
-  end
+  end  
+
   
   def current_user
     if session[:user_id]
@@ -18,4 +19,6 @@ class ApplicationController < ActionController::Base
   end
   #this allows the current_user method to be available in all the views
   helper_method :current_user
+  hide_action :current_user
+  
 end

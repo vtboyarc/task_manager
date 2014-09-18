@@ -50,6 +50,10 @@
                    <%= t.label :assigned_to %>
                    <%= t.collection_select :user_id, User.all, :id, :name %>
                  </p>
+							 	<p>
+							     <%= t.label :completed %>
+							     <%= t.check_box :completed%>
+							   </p>
 	
              	<%= t.submit value: "Save Changes"%>
 
@@ -73,6 +77,7 @@
             
             <p>
             <%= link_to("Cancel Edit", tasks_path) %></p>
+
             
             <p><%= link_to("Return to Home", root_path) %></p>
       
