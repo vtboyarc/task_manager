@@ -32,6 +32,10 @@
     <%= t.label :assigned_to %>
     <%= t.collection_select :user_id, User.all, :id, :name %>
   </p>
+	<p>
+    <%= t.label :completed %>
+    <%= t.check_box :completed%>
+  </p>
   
   <p> 
   <%= t.submit value: "Create Task" %>
