@@ -35,6 +35,7 @@ class UsersController < ApplicationController
   
   def update
     @user = User.find(params[:id])
+    
     if @user != current_user
       redirect_to users_path, alert: "Users cannot edit other users."
     else
@@ -53,12 +54,13 @@ class UsersController < ApplicationController
 
   def destroy
     @user = User.find(params[:id])
+    
     if @user != current_user
       redirect_to users_path, alert: "Users cannot delete other users."
     else
       @user.delete
     redirect_to users_path, notice: "User successfully deleted."
+    end
   end
   
-  end
 end
