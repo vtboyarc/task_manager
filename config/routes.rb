@@ -27,5 +27,5 @@ TaskManager::Application.routes.draw do
   resources :users, :tasks, :tags, :comments
   resources :activities
 
-   
+
 end
