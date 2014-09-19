@@ -82,8 +82,7 @@ class TasksController < ApplicationController
     else
       render "edit", alert: "Invalid. Your task was not updated."
     end
-  
-     
+        
   end
 
   def destroy
@@ -100,11 +99,11 @@ class TasksController < ApplicationController
     @comments = Comment.new
     @user = User.find(@task.user_id)
     
-      if @task.completed
-        @response = "Yes! Good work!"
-      else
-        @response = "No"
-      end
+    if @task.completed
+      @response = "Yes! Good work!"
+    else
+      @response = "No"
+    end
   end
   
   
