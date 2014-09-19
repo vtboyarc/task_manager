@@ -1,64 +1,85 @@
-
-
-
-
-<div id="doc" class="yui-t2">
-  <div id="hd">
-    <div id="header"><h1>Task, Inc. - Task Manager</h1></div>
+<div id="container">
+  <div id="header">
+    <div id="headerguts">
+    <h1>Task, Inc.</h1>
   </div>
-  <div id="bd">
-    <div id="yui-main">
-      <div class="yui-b">
+  </div>
+  <div id="sidebar">
+    <div id="sidebarguts">
+    <h2>Edit Task</h2>
+    <div id="sidebarindent">
+    <%= link_to("Cancel Edit", tasks_path) %></p>
+    <p><%= link_to("Return to Home", root_path) %></p>
+  </div>
+  </div>
+  </div>
+    <div id="contentbig">
+      <div id="contentbigguts">
+        
+    <div id="contentbigguts">
       
-          <div class="yui-u first">
-            <div class="content">
-              
+      <%= form_for @task do |t| %>
 
-              
-             <%= form_for @task do |t| %>
+        <p>
+          <%= t.label :name %>
+          <%= t.text_field :name %>
+        </p>
 
-               <p>
-                 <%= t.label :name %>
-                 <%= t.text_field :name %>
-               </p>
-	
-	
-             	<p>
-                 <%= t.label :description %>
-                 <%= t.text_field :description %>
-               </p>
-	
-             	<p>
-                 <%= t.label :priority %>
-                 <%= t.text_field :priority %>
-               </p>
-	
-             	<p>
-                 <%= t.label :due_date %>
-                 <%= t.text_field :due_date %>
-               </p>
+
+      	<p>
+          <%= t.label :description %>
+          <%= t.text_field :description %>
+        </p>
+
+      	<p>
+          <%= t.label :priority %>
+          <%= t.text_field :priority %>
+        </p>
+
+      	<p>
+          <%= t.label :due_date %>
+          <%= t.text_field :due_date %>
+        </p>
+
+        <p>
+            <%= t.label :project %>
+            <%= t.collection_select :project_id, Project.all, :id, :name %>
+          </p>
+        <p>
+            <%= t.label :tag %>
+            <%= t.collection_select :tag_id, Tag.all, :id, :name %>
+          </p>
+        	<p>
+            <%= t.label :assigned_to %>
+            <%= t.collection_select :user_id, User.all, :id, :name %>
+          </p>
+			 	<p>
+			     <%= t.label :completed %>
+			     <%= t.check_box :completed%>
+			   </p>
+
+      	<%= t.submit value: "Save Changes"%>
+
+      <% end %>
+      
+      
+
+    </div>
+  </div>
+    </div>
+    <div id="clearcontentright">
+    </div>
+    <div id="footer">
+    </div>
   
-               <p>
-                   <%= t.label :project %>
-                   <%= t.collection_select :project_id, Project.all, :id, :name %>
-                 </p>
-               <p>
-                   <%= t.label :tag %>
-                   <%= t.collection_select :tag_id, Tag.all, :id, :name %>
-                 </p>
-               	<p>
-                   <%= t.label :assigned_to %>
-                   <%= t.collection_select :user_id, User.all, :id, :name %>
-                 </p>
-							 	<p>
-							     <%= t.label :completed %>
-							     <%= t.check_box :completed%>
-							   </p>
-	
-             	<%= t.submit value: "Save Changes"%>
+</div>
 
-             <% end %>
-             
+
+
+
+              
+
+    
 
               
               

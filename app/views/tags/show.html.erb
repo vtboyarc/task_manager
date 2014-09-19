@@ -1,48 +1,35 @@
-
-
-
-
-<div id="doc" class="yui-t2">
-  <div id="hd">
-    <div id="header"><h1>Task, Inc. - Task Manager</h1></div>
+<div id="container">
+  <div id="header">
+    <div id="headerguts">
+    <h1>Task, Inc.</h1>
   </div>
-  <div id="bd">
-    <div id="yui-main">
-      <div class="yui-b">
-      
-          <div class="yui-u first">
-            <div class="content">
-              
-
-              <p>
-              <p>Name: <%= @tag.name %></p>
-
-              </p>
-              
-              
-            </div>
-     
-          
-        </div>
-      </div>
-    </div>
-    <div class="yui-b">
-      <div id="secondary"><h2>Tag Details</h2>
+  </div>
+  <div id="sidebar">
+    <div id="sidebarguts">
+    <h2>Tag Details</h2>
+    <div id="sidebarindent">
+    <p><%= link_to("Edit this Tag", edit_tag_path) %></p>
+    <p><%= link_to("Delete this Tag", tag_path, :method => :delete) %></p>  
+    <p><%= link_to("Create a New Tag", new_tag_path) %></p>
+    <p><%= link_to("Return to Tag Index", tags_path) %></p>
+    <p><%= link_to("Return to Home", root_path) %></p>
+  </div>
+  </div>
+  </div>
+    <div id="contentbig">
+      <div id="contentbigguts">
         
+    <div id="contentbigguts">
       
-            <p><%= link_to("Edit this Tag", edit_tag_path) %></p>
-            <p><%= link_to("Delete this Tag", tag_path, :method => :delete) %></p>  
-            <p><%= link_to("Create a New Tag", new_tag_path) %></p>
-            <p><%= link_to("Return to Tag Index", tags_path) %></p>
-            <p><%= link_to("Return to Home", root_path) %></p>
+    	<p>Name: <%= @tag.name %></p>
       
-      
-      </div>
 
     </div>
   </div>
-  <div id="ft">
-    <div id="footer"></div>
-  </div>
+    </div>
+    <div id="clearcontentright">
+    </div>
+    <div id="footer">
+    </div>
+  
 </div>
-

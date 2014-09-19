@@ -58,32 +58,43 @@ body{
   width:35%;
   height:500px;
   text-align:left;
-  align:left;
-  margin:0;
-  padding:0;
-  background:#CDF0F9;
   float:left;
+	background:#CDF0F9;
+	margin:0;
+  padding:0;
+  
 }
 
-#smallguts {
+#smallgutsl {
   width:100%;
   padding-left:25px;
 }
 
-#smallindent {
+#smallindentl {
   width:100%;
   padding-left:20px;
 }
+
+#smallgutsr {
+  width:100%;
+  padding-left:25px;
+}
+
+#smallindentr {
+  width:100%;
+  padding-left:20px;
+}
+
 
 #contentright {
   width:40%;
   height:500px;
   text-align:left;
-  align:left;
-  margin:0;
-  padding:0;
-  background:#CDF0F9;
   float:right;
+	background:#CDF0F9;
+	margin:0;
+  padding:0;
+  
 }
 
 

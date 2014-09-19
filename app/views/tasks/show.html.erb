@@ -1,107 +1,72 @@
-
-
-
-
-
-<div id="doc" class="yui-t2">
-  <div id="hd">
-    <div id="header"><h1>Task, Inc. - Task Manager</h1></div>
+<div id="container">
+  <div id="header">
+    <div id="headerguts">
+    <h1>Task, Inc.</h1>
   </div>
-  <div id="bd">
-    <div id="yui-main">
-      <div class="yui-b">
-      
-          <div class="yui-u first">
-            <div class="content">
-              
-              <div id="contentall">
-                <div id="content1">
-              
+  </div>
+  <div id="sidebar">
+    <div id="sidebarguts">
+    <h2>Task Details</h2>
+    <div id="sidebarindent">
+    <p><%= link_to("Return to Projects", projects_path) %></p>
 
-              
+    <p><%= link_to("Edit this Task", edit_task_path) %></p>
+    <p><%= link_to("Delete this Task", task_path, :method => :delete) %></p>  
+    <p><%= link_to("Create a New Task", new_task_path) %></p>
+    <p><%= link_to("Return to Task Index", tasks_path) %></p>
+    <p><%= link_to("Return to Home", root_path) %></p>
+  </div>
+  </div>
+  </div>
 
-
-          	<p>Name: <%= @task.name %></p>
-          	<p>Description: <%= @task.description %></p>
-          	<p>Priority: <%= @task.priority %></p>
-          	<p>Due Date: <%= @task.due_date %></p>
-            <p>Project: <%= @project.name %></p>
-            <p>Tag: <%= @tag.name %></p>
-            <p>Assigned To: <%= @user.name %> </p>
-						<p>Completed? <%= @response %></p>
-            
-            </div>
-            
-            <div id="content2">
-            <div id="commentstyle">
-              
-            <b><h3>Comments</h3></b>
-  
-            <% @task.comments.each do |c| %>
-  
-              <a><%= c.message %></a>
-              <a><%= link_to("Edit", edit_comment_path(c.id)) %></a>
-              <a><%= link_to("Delete", comment_path(c.id), :method => :delete) %></a><br/><br/>
-  
-            <% end %>
-          
-  
-            <%= form_for @comments do |c| %>
-
-              <p>
-                <%= c.label :add_a_comment %></p>
-              <p>
-                <%= c.text_area :message %>
-              </p>
-    
-              <%= c.hidden_field :user_id, { :value => current_user } %>
-              <%= c.hidden_field :task_id, { :value => @task.id } %>
-    
-
-              <%= c.submit value: "Submit Comment" %>
-
-            <% end %>
-          </div>
-          <div id="clearcontent"></div>
-        </div>
-        
-            
-
-              
-              
-              </div>
-            </div>
+    <div id="contentleft">
+      <div id="smallgutsl">
+    	<p>Name: <%= @task.name %></p>
+    	<p>Description: <%= @task.description %></p>
+    	<p>Priority: <%= @task.priority %></p>
+    	<p>Due Date: <%= @task.due_date %></p>
+      <p>Project: <%= @project.name %></p>
+      <p>Tag: <%= @tag.name %></p>
+      <p>Assigned To: <%= @user.name %> </p>
+			<p>Completed? <%= @response %></p>
+      </div>
+    </div>
      
-          
-        </div>
+    <div id="contentright">
+      <div id="smallgutsr">
+      <p>Add a comment to this task:</p>
+        <div id="smallindentr">
+        <% @task.comments.each do |c| %>
+
+          <a><%= c.message %></a>
+          <a><%= link_to("Edit", edit_comment_path(c.id)) %></a>
+          <a><%= link_to("Delete", comment_path(c.id), :method => :delete) %></a><br/><br/>
+
+        <% end %>
+      
+
+        <%= form_for @comments do |c| %>
+
+          <p>
+            <%= c.label :comment %></p>
+          <p>
+            <%= c.text_area :message %>
+          </p>
+
+          <%= c.hidden_field :user_id, { :value => current_user } %>
+          <%= c.hidden_field :task_id, { :value => @task.id } %>
+
+
+          <%= c.submit value: "Submit Comment" %>
+
+        <% end %>
+      </div>
       </div>
     </div>
-    <div class="yui-b">
-      <div id="secondary"><h2>Task Details</h2>
-        
-
-            <p><%= link_to("Return to Projects", projects_path) %></p>
-
-            <p><%= link_to("Edit this Task", edit_task_path) %></p>
-            <p><%= link_to("Delete this Task", task_path, :method => :delete) %></p>  
-            <p><%= link_to("Create a New Task", new_task_path) %></p>
-            <p><%= link_to("Return to Task Index", tasks_path) %></p>
-            <p><%= link_to("Return to Home", root_path) %></p>
-            
-      
-      
-      </div>
-
+    <div id="clearcontentright">
     </div>
-  </div>
-  <div id="ft">
-    <div id="footer"></div>
-  </div>
+
+    <div id="footer">
+    </div>
+  
 </div>
-
-
-
-</div>
-
-
-
