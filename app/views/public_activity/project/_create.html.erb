@@ -1,2 +1,8 @@
-				added project <%= link_to activity.trackable.name, 
-		activity.trackable.user %>
+	
+<% if activity.trackable%>	
+	added a new project "<%=  activity.trackable.name %>"
+<% else%>
+	removed a project.	
+<% end %>
+
+

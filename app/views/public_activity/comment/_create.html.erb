@@ -1,2 +1,6 @@
-				added comment <%= link_to activity.trackable.user, 
-		activity.trackable.message %>
+
+<% if activity.trackable %>
+	added a comment "<%= activity.trackable.message %>" to a task
+<% else %>
+	removed a comment.
+<% end %>
