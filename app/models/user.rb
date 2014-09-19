@@ -8,15 +8,4 @@ class User < ActiveRecord::Base
   validates :email, uniqueness: true
   validates :email, :password, :password_confirmation, presence: true
   
-  def current_user
-    if session[:user_id]
-      @user_id ||= User.find(session[:user_id])
-    end
-  end
-  
-  def notify_user
-  end
-  
-  
-  
 end
