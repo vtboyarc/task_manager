@@ -23,7 +23,9 @@ TaskManager::Application.routes.draw do
   post "create_user" => 'users#create', :as => "create_user"
   get "signup" => 'users#new', :as => "signup"
 
+
   resources :users, :tasks, :tags, :comments
   resources :activities
+
    
 end
