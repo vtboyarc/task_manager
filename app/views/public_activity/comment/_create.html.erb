@@ -1,1 +1,6 @@
-				added a comment "<%= activity.trackable.message %>" to task "<%= activity.trackable.task_id%>"
+
+<% if activity.trackable %>
+	added a comment "<%= activity.trackable.message %>" to task "<%= activity.trackable.task_id%>"
+<% else %>
+	removed a comment.
+<% end %>

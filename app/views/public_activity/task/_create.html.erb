@@ -1,1 +1,5 @@
-				added a new task "<%= activity.trackable.name %>" 
+<% if activity.trackable%>	
+	added a new task "<%=  activity.trackable.name %>"
+<% else%>
+	removed a task.	
+<% end %>
