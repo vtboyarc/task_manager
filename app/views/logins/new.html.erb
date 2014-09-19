@@ -1,60 +1,48 @@
-
-  <div id="doc" class="yui-t2">
-    <div id="hd">
-      <div id="header"><h1>Task, Inc. - Task Manager</h1></div>
-    </div>
-    <div id="bd">
-      <div id="yui-main">
-        <div class="yui-b">
-      
-            <div class="yui-u first">
-              <div class="content">
-              
-<p>
-              <%= form_tag login_path do %>
-                <div class="field">
-                  <%= label_tag :email %><br />
-                  <%= text_field_tag :email, params[:email] %>
-                </div>
-  </p><p>
-                <div class="field">
-                  <%= label_tag :password %><br />
-                  <%= password_field_tag :password %>
-                </div>
-  </p>
-                <%= submit_tag "Log In" %>
-              <% end %>
-                
-              
-              
-              </div>
-     
-          
-          </div>
-        </div>
-      </div>
-      <div class="yui-b">
-        <div id="secondary"><h2>User Log In</h2>
+<div id="container">
+  <div id="header">
+    <div id="headerguts">
+    <h1>Task, Inc.</h1>
+  </div>
+  </div>
+  <div id="sidebar">
+    <div id="sidebarguts">
+    <h2>User Log In</h2>
+    <p>Not an existing user?</p>
+    <div id="sidebarindent">
+    <p> <%= link_to("Create User Account", new_user_path) %> 
+    <p><%= link_to 'Return to Home', root_path %></p>
+    
+  </div>
+  </div>
+  </div>
+    <div id="contentbig">
+      <div id="contentbigguts">
         
+    <div id="contentbigguts">
       
-              
-              
-              <p>Not an existing user?</p>
-              <p> <%= link_to("Create User Account", new_user_path) %> 
-              <p><%= link_to 'Return to Home', root_path %></p>
-      
-      
-        </div>
+      <p>
+           <%= form_tag login_path do %>
+            <div class="field">
+            <%= label_tag :email %><br />
+            <%= text_field_tag :email, params[:email] %>
+          </div>
+        </p>
+        <p>
+           <div class="field">
+            <%= label_tag :password %><br />
+            <%= password_field_tag :password %>
+          </div>
+        </p>
+         <%= submit_tag "Log In" %>
+                    <% end %>
 
-      </div>
-    </div>
-    <div id="ft">
-      <div id="footer"></div>
     </div>
   </div>
-
-
-
-
-
+    </div>
+    <div id="clearcontentright">
+    </div>
+    <div id="footer">
+    </div>
+  
+</div>
 

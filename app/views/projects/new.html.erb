@@ -1,59 +1,44 @@
-
-
-
-
-
-
-
-  <div id="doc" class="yui-t2">
-    <div id="hd">
-      <div id="header"><h1>Task, Inc. - Task Manager</h1></div>
-    </div>
-    <div id="bd">
-      <div id="yui-main">
-        <div class="yui-b">
-      
-            <div class="yui-u first">
-              <div class="content">
-              
-
-               <%= form_for @project do |p| %>
-
-                 <p>
-                   <%= p.label :name %>
-                   <%= p.text_field :name %>
-                 </p>
-               	<p>
-                   <%= p.label :description %>
-                   <%= p.text_field :desc %>
-                 </p>
-	
-               	<%= p.submit value: "Create Project"%>
-
-               <% end %>
-                
-              
-              
-              </div>
-     
-          
-          </div>
-        </div>
-      </div>
-      <div class="yui-b">
-        <div id="secondary"><h2>New Project</h2>
+<div id="container">
+  <div id="header">
+    <div id="headerguts">
+    <h1>Task, Inc.</h1>
+  </div>
+  </div>
+  <div id="sidebar">
+    <div id="sidebarguts">
+    <h2>New Project</h2>
+    <div id="sidebarindent">
+    <p><%= link_to("Cancel Create", projects_path)%>
+    <p><%= link_to("Return to Home", root_path) %></p>
+  </div>
+  </div>
+  </div>
+    <div id="contentbig">
+      <div id="contentbigguts">
         
+    <div id="contentbigguts">
       
-              <p><%= link_to("Cancel Create", projects_path)%>
-              
-              <p><%= link_to("Return to Home", root_path) %></p>
-      
-      
-        </div>
+      <%= form_for @project do |p| %>
 
-      </div>
-    </div>
-    <div id="ft">
-      <div id="footer"></div>
+        <p>
+          <%= p.label :name %>
+          <%= p.text_field :name %>
+        </p>
+      	<p>
+          <%= p.label :description %>
+          <%= p.text_field :desc %>
+        </p>
+
+      	<%= p.submit value: "Create Project"%>
+
+      <% end %>
+
     </div>
   </div>
+    </div>
+    <div id="clearcontentright">
+    </div>
+    <div id="footer">
+    </div>
+  
+</div>
