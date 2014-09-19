@@ -81,7 +81,9 @@ class TasksController < ApplicationController
       redirect_to project_path(@project.name), :notice => "Your email notification to #{@user.name} was sent successfully."
     else
       render "edit", alert: "Invalid. Your task was not updated."
-    end  
+    end
+  
+     
   end
 
   def destroy
@@ -97,6 +99,12 @@ class TasksController < ApplicationController
     @tag = Tag.find(@task.tag_id)
     @comments = Comment.new
     @user = User.find(@task.user_id)
+    
+      if @task.completed
+        @response = "Yes! Good work!"
+      else
+        @response = "No"
+      end
   end
   
   
