@@ -45,6 +45,5 @@ class ProjectsController < ApplicationController
     @project = Project.find_by_name(params[:name])
     @tasks = Task.all
     @task = Task.new
-
   end
 end
