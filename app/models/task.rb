@@ -14,23 +14,23 @@ class Task < ActiveRecord::Base
   
   validates :name, :description, :project_id, :tag_id, :user_id, presence: true
   
-  def email_owner(current_user)
-    Pony.mail({
-              :to => "#{self.user.email}",
-              :via => :smtp,
-              :subject => "#{current_user.name}" + " has assigned you a task.",
-              :body => "Your task is " + "#{self.name}" + ".",
-              :via_options => {
-                :address              => 'smtp.gmail.com',
-                :port                 => '587',
-                :enable_starttls_auto => true,
-                :user_name            => 'taskinc.taskmanager@gmail.com',
-                :password             => 'ocsbudai',
-                :authentication       => :plain, 
-                :domain               => "localhost.localdomain" 
-      
-                }
-              })
-  end
+  # def email_owner(current_user)
+  #   Pony.mail({
+  #             :to => "#{self.user.email}",
+  #             :via => :smtp,
+  #             :subject => "#{current_user.name}" + " has assigned you a task.",
+  #             :body => "Your task is " + "#{self.name}" + ".",
+  #             :via_options => {
+  #               :address              => 'smtp.gmail.com',
+  #               :port                 => '587',
+  #               :enable_starttls_auto => true,
+  #               :user_name            => 'taskinc.taskmanager@gmail.com',
+  #               :password             => 'ocsbudai',
+  #               :authentication       => :plain,
+  #               :domain               => "localhost.localdomain"
+  #
+  #               }
+  #             })
+  # end
       
 end

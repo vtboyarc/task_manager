@@ -18,24 +18,39 @@ class TasksController < ApplicationController
   end
  
   def create
-
-    @task = Task.new(params[:task])
+ 
+     @task = Task.new(params[:task])
     
-    # TODO Figure out why this is here. 
-    # @task.project_id = (params[:task][:project_id]).to_i
-#     @task.tag_id = (params[:task][:tag_id]).to_i
-#     @task.user_id = (params[:task][:user_id]).to_i
-#     @task.completed = (params[:task][:completed])
+     # TODO Figure out why this is here. 
+     @task.project_id = (params[:task][:project_id]).to_i
+     @task.tag_id = (params[:task][:tag_id]).to_i
+     @task.user_id = (params[:task][:user_id]).to_i
+     @task.completed = (params[:task][:completed])
     
-    @user = User.find(@task.user_id)
-    if @task.save
-      @task.email_owner(current_user)
-      @project = Project.find(@task.project_id)
-      redirect_to project_path(@project.name), notice: "Your email notification to #{@user.name} was sent successfully."
-    else
-      render "new", alert: "Invalid. Your task was not added."
-    end 
-  end
+     @user = User.find(@task.user_id)
+     if @task.save
+       Pony.mail({
+               :to => "#{@user.email}",
+               :via => :smtp,
+               :subject => "#{current_user.name}" + " has assigned you a task.",
+               :body => "Your task is " + "#{@task.name}" + ".",
+               :via_options => {
+                   :address              => 'smtp.gmail.com',
+                   :port                 => '587',
+                   :enable_starttls_auto => true,
+                   :user_name            => 'taskinc.taskmanager@gmail.com',
+                   :password             => 'ocsbudai',
+                   :authentication       => :plain, 
+                   :domain               => "localhost.localdomain" 
+            
+                       }
+                     })
+                     @project = Project.find(@task.project_id)
+             redirect_to project_path(@project.name), notice: "Your email notification to #{@user.name} was sent successfully."
+            else
+             render "new", alert: "Invalid. Your task was not added."
+     end 
+   end
     
   
   def edit
