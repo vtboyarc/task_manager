@@ -1,13 +1,188 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the top of the
- * compiled file, but it's generally better to create a new file per style scope.
- *
- *= require_self
- *= require_tree .
- */
+$font-stack:    Helvetica, sans-serif;
+//pull out margin 0 and out in a module, then @extend
+
+body{
+  text-align:center;
+  font: 100% $font-stack;
+  background-image: url(http://i.imgur.com/IhvlRrT.jpg?2);
+  background-attachment: repeat;
+}
+
+
+#ft {
+  clear:both;
+}
+
+#containter {
+  width:100%;
+
+}
+
+#header {
+  width:100%;
+  height:100px;
+  background-color: #82B2BF;
+  margin:0;
+  padding:0;
+  text-align:left;
+  border-style:solid;
+  border-color:#2E7183;
+  border-width:2px;
+}
+
+#headerguts {
+  width:100%;
+  padding-left:25px;
+  padding-top:15px;
+}
+
+#contentbig {
+  width:75%;
+  height:500px;
+  text-align:left;
+  float:right;
+  background:#CDF0F9;
+  margin:0;
+  padding:0;
+}
+
+#contentbigguts {
+  width:100%;
+  padding-left:25px;
+}
+
+#contentbigindent {
+  width:100%;
+  padding-left:20px;
+}
+
+#contentleft {
+  width:35%;
+  height:500px;
+  text-align:left;
+  float:left;
+  background:#CDF0F9;
+  margin:0;
+  padding:0;
+
+}
+
+#smallgutsl {
+  width:100%;
+  padding-left:25px;
+}
+
+#smallindentl {
+  width:100%;
+  padding-left:20px;
+}
+
+#smallgutsr {
+  width:100%;
+  padding-left:25px;
+}
+
+#smallindentr {
+  width:100%;
+  padding-left:20px;
+}
+
+
+#contentright {
+  width:40%;
+  height:500px;
+  text-align:left;
+  float:right;
+  background:#CDF0F9;
+  margin:0;
+  padding:0;
+
+}
+
+
+#sidebar {
+  width:25%;
+  height:500px;
+  background:#FFFEDC;
+  margin:0;
+  float:left;
+  text-align:left;
+  padding:0;
+}
+
+#sidebarguts {
+  width:100%;
+  padding-left:25px;
+}
+
+#sidebarindent {
+  width:100%;
+  padding-left:20px;
+}
+
+#footer {
+  width:100%;
+  height:40px;
+  background:#2E7183;
+  margin:0;
+  padding:0;
+}
+
+
+#contentindent {
+  padding-left:25px;
+  align-text: left;
+  margin-left:25px;
+}
+
+#navbar {
+  float:left;
+  padding:20px;
+
+}
+
+#navbar ul {
+    text-align: center;
+    padding: 0;
+    margin-top: 0;
+    display:inline;
+}
+
+#navbar li {
+    display:block;
+    text-align: center;
+    float:left;
+    margin: 0;
+    padding-right: 25px;
+    display:inline;
+}
+
+#userbar {
+  float:right;
+  padding:20px;
+}
+
+#userbarclear {
+  clear:both;
+}
+
+
+#clearcontentleft {
+  clear:both;
+}
+
+#clearcontentright {
+  clear:both;
+}
+
+#clearsidebar {
+  clear:both;
+}
+
+#clearcontentbig {
+  clear:both;
+}
+
+#sortable { list-style-type: none; margin: 0; padding: 0; width: 60%; }
+#sortable li { margin: 0 3px 3px 3px; padding: 0.4em; padding-left: 1.5em; font-size: 1.4em; height: 18px; }
+#sortable li span { position: absolute; margin-left: -1.3em; }
