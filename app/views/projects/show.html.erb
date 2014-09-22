@@ -1,85 +1,83 @@
 <div id="container">
   <div id="header">
     <div id="headerguts">
-    <h1>Task, Inc.</h1>
+    	<h1>Task, Inc.</h1>
+  	</div>
   </div>
-  </div>
+	
   <div id="sidebar">
-    <div id="sidebarguts">
-    <h2>Project Details</h2>
-    <div id="sidebarindent">
-    <p><%= link_to("Edit this Project", edit_project_path) %></p>
-    <p><%= link_to("Delete this Project", delete_project_path, :method => :delete) %></p>  
-    <p><%= link_to("Create a New Project", new_project_path) %></p>
-    <p><%= link_to("Return to Project Index", projects_path) %></p>
-    <p><%= link_to("Return to Home", root_path) %></p>
-  </div>
-  </div>
+	    <div id="sidebarguts">
+	    	<h2>Project Details</h2>
+	    <div id="sidebarindent">
+		    <p><%= link_to("Edit this Project", edit_project_path) %></p>
+		    <p><%= link_to("Delete this Project", delete_project_path, :method => :delete) %></p>  
+		    <p><%= link_to("Create a New Project", new_project_path) %></p>
+		    <p><%= link_to("Return to Project Index", projects_path) %></p>
+		    <p><%= link_to("Return to Home", root_path) %></p>
+	  	</div>
+  	</div>
   </div>
 
     <div id="contentleft">
       <div id="smallgutsl">
-      <p>Name: <%= @project.name %></p> 
-      <p>Description: <%= @project.desc %></p>
-      <p>Tasks:</p>
-        <div id="smallindentl">
-        <% @project.tasks.each do |t| %>
-          <p><%= link_to(t.name, task_path(t.id))%></p>
-        <% end %>      
-        </div>
+	      <p>Name: <%= @project.name %></p> 
+	      <p>Description: <%= @project.desc %></p>
+	      <p>Tasks:</p>
+	        <div id="smallindentl">	
+	        		 <% @project.tasks.each do |t| %>
+	          <p><%= link_to(t.name, task_path(t.id))%></p>
+	        		 <% end %> 
+        	</div>
       </div>
     </div>
      
     <div id="contentright">
       <div id="smallgutsr">
-      <p>Add a new task to this project:</p>
-        <div id="smallindentr">
-        <%= form_for @task do |t| %>
+      	<p>Add a new task to this project:</p>
+				
+	        <div id="smallindentr">
+	        		<%= form_for @task do |t| %>
+	          <p>
+	            <%= t.label :name %>
+	            <%= t.text_field :name %>
+	          </p>
+	        	<p>
+	            <%= t.label :description %>
+	            <%= t.text_field :description %>
+	        	</p>
+	        	<p>
+	            <%= t.label :priority %>
+	            <%= t.text_field :priority %>
+	          </p>
+	        	<p>
+	            <%= t.label :due_date %>
+	            <%= t.text_field :due_date %>
+	          </p>
 
-          <p>
-            <%= t.label :name %>
-            <%= t.text_field :name %>
-          </p>
-        <p>
-            <%= t.label :description %>
-            <%= t.text_field :description %>
-          </p>
-        <p>
-            <%= t.label :priority %>
-            <%= t.text_field :priority %>
-          </p>
-        <p>
-            <%= t.label :due_date %>
-            <%= t.text_field :due_date %>
-          </p>
-
-        <p>
-            <%= t.label :project %>
-            <%= t.collection_select :project_id, Project.all, :id, :name %>
-          </p>
-        <p>
-            <%= t.label :tag %>
-            <%= t.collection_select :tag_id, Tag.all, :id, :name %>
-          </p>
-        	<p>
-            <%= t.label :assigned_to %>
-            <%= t.collection_select :user_id, User.all, :id, :name %>
-          </p>
-
-          <p> 
-          <%= t.submit value: "Create Task" %>
-
-
-        <% end %>
-           
-      </div>
-      </div>
+	        	<p>
+	            <%= t.label :project %>
+	            <%= t.collection_select :project_id, Project.all, :id, :name %>
+	          </p>
+	        	<p>
+	            <%= t.label :tag %>
+	            <%= t.collection_select :tag_id, Tag.all, :id, :name %>
+	          </p>
+	        	<p>
+	            <%= t.label :assigned_to %>
+	            <%= t.collection_select :user_id, User.all, :id, :name %>
+	          </p>
+	          	<%= t.submit value: "Create Task" %>
+	        		<% end %> 
+	      </div>
+				
+	    </div>
     </div>
-    <div id="clearcontentright">
-    </div>
+		
+  <div id="clearcontentright">
+  </div>
 
-    <div id="footer">
-    </div>
+  <div id="footer">
+  </div>
   
 </div>
 

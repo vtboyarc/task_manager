@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>Task, Inc.</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
-<body>
 
+<body>
   <div id="userbar">
     <% if current_user %>
     <%= "Currently logged in as " + current_user.name %> [<%= link_to("Log Out", logout_path)%>]
@@ -15,28 +16,28 @@
     [<%= link_to("Existing User Log In", login_path) %>][<%= link_to("New User Sign Up", signup_path)%>]
     <% end %>
   </div>
+	
   <div id="navbar">
     <ul>
       <li><%= link_to("Home", root_path) %></li>
-
       <li><%= link_to("Projects", projects_path)%></li>
       <li><%= link_to("Tasks", tasks_path)%></li>
       <li><%= link_to("Tags", tags_path)%></li>
-            <li><%= link_to("Users", users_path)%></li>
+      <li><%= link_to("Users", users_path)%></li>
     </ul>
   </div>
+	
   <div id="ft">
-  
   </div>
 
-  <% if flash[:notice] %>
-  <p id="notice"><%= flash[:notice]%>
-  <% end %>
+<% if flash[:notice] %>
+	<p id="notice"><%= flash[:notice]%>
+<% end %>
 
 
-  <% if flash[:alert] %>
-  <p id="alert"><%= flash[:alert]%>
-  <% end %>
+<% if flash[:alert] %>
+	<p id="alert"><%= flash[:alert]%>
+<% end %>
     
 
 <%= yield %>

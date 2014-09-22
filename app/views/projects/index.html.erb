@@ -1,36 +1,37 @@
 <div id="container">
   <div id="header">
     <div id="headerguts">
-    <h1>Task, Inc.</h1>
+    	<h1>Task, Inc.</h1>
+  	</div>
   </div>
-  </div>
+	
   <div id="sidebar">
     <div id="sidebarguts">
-    <h2>Projects Index</h2>
-    <div id="sidebarindent">
-    <p><%= link_to("Create a New Project", new_project_path) %></p>
-    <p><%= link_to("Return to Home", root_path) %></p>
+    	<h2>Projects Index</h2>
+	    <div id="sidebarindent">
+		    <p><%= link_to("Create a New Project", new_project_path) %></p>
+		    <p><%= link_to("Return to Home", root_path) %></p>
+		  </div>
+  	</div>
   </div>
-  </div>
-  </div>
+	
     <div id="contentbig">
       <div id="contentbigguts">
-        
-    <div id="contentbigguts">
-      
-      <% @projects.each do |project|%>
-      <ul id="sortable">
-
-      	<p><%= link_to(project.name, project_path(project.name)) %></p>
-      <%end%>
-
+       
+    		<div id="contentbigguts">
+    					 <% @projects.each do |project|%>
+    			<ul id="sortable">
+    				<p><%= link_to(project.name, project_path(project.name)) %></p>
+   				 		 <%end%>
+    		</div>
+  		</div>
     </div>
+		
+  <div id="clearcontentright">
   </div>
-    </div>
-    <div id="clearcontentright">
-    </div>
-    <div id="footer">
-    </div>
+	
+  <div id="footer">
+  </div>
   
 </div>
 

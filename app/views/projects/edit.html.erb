@@ -1,47 +1,43 @@
 <div id="container">
   <div id="header">
     <div id="headerguts">
-    <h1>Task, Inc.</h1>
+    	<h1>Task, Inc.</h1>
+  	</div>
   </div>
-  </div>
+	
   <div id="sidebar">
     <div id="sidebarguts">
-    <h2>New Project</h2>
-    <div id="sidebarindent">
-    <p><%= link_to("Cancel Edit", projects_path) %></p>
-    <p><%= link_to("Return to Home", root_path) %></p>
+    	<h2>New Project</h2>
+	  		<div id="sidebarindent">
+			    <p><%= link_to("Cancel Edit", projects_path) %></p>
+			    <p><%= link_to("Return to Home", root_path) %></p>
+			 	</div>
+ 		</div>
   </div>
-  </div>
-  </div>
-    <div id="contentbig">
-      <div id="contentbigguts">
-        
+	
+  <div id="contentbig">
     <div id="contentbigguts">
-      
-      <p>
-      <%= form_for @project do |t| %>
 
+  		<div id="contentbigguts">
+      		<%= form_for @project do |t| %>
         <p>
           <%= t.label :name %>
           <%= t.text_field :name %>
         </p>
-
         <p>
           <%= t.label :description %>
           <%= t.text_field :desc %>
         </p>
+      		<%= t.submit value: "Save Changes" %>
+					<% end %>
+    	</div>	
+			
+		</div>
+	</div>
+	
+	<div id="clearcontentright">
+	</div>
 
-      	<%= t.submit value: "Save Changes" %>
-
-      <% end %>
-      
-
-    </div>
-  </div>
-    </div>
-    <div id="clearcontentright">
-    </div>
-    <div id="footer">
-    </div>
-  
+	<div id="footer">
+	</div>
 </div>

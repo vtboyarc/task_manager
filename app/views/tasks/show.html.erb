@@ -1,72 +1,70 @@
 <div id="container">
+	
   <div id="header">
     <div id="headerguts">
-    <h1>Task, Inc.</h1>
+    	<h1>Task, Inc.</h1>
+  	</div>
   </div>
-  </div>
+	
   <div id="sidebar">
     <div id="sidebarguts">
-    <h2>Task Details</h2>
-    <div id="sidebarindent">
-    <p><%= link_to("Return to Projects", projects_path) %></p>
-
-    <p><%= link_to("Edit this Task", edit_task_path) %></p>
-    <p><%= link_to("Delete this Task", task_path, :method => :delete) %></p>  
-    <p><%= link_to("Create a New Task", new_task_path) %></p>
-    <p><%= link_to("Return to Task Index", tasks_path) %></p>
-    <p><%= link_to("Return to Home", root_path) %></p>
-  </div>
-  </div>
-  </div>
+    	<h2>Task Details</h2>
+		    <div id="sidebarindent">
+			    <p><%= link_to("Return to Projects", projects_path) %></p>
+			    <p><%= link_to("Edit this Task", edit_task_path) %></p>
+			    <p><%= link_to("Delete this Task", task_path, :method => :delete) %></p>  
+			    <p><%= link_to("Create a New Task", new_task_path) %></p>
+			    <p><%= link_to("Return to Task Index", tasks_path) %></p>
+			    <p><%= link_to("Return to Home", root_path) %></p>
+		  	</div>
+  	</div>
+ 	</div>
 
     <div id="contentleft">
       <div id="smallgutsl">
-    	<p>Name: <%= @task.name %></p>
-    	<p>Description: <%= @task.description %></p>
-    	<p>Priority: <%= @task.priority %></p>
-    	<p>Due Date: <%= @task.due_date %></p>
-      <p>Project: <%= @project.name %></p>
-      <p>Tag: <%= @tag.name %></p>
-      <p>Assigned To: <%= @user.name %> </p>
-			<p>Completed? <%= @response %></p>
+	    	<p>Name: <%= @task.name %></p>
+	    	<p>Description: <%= @task.description %></p>
+	    	<p>Priority: <%= @task.priority %></p>
+	    	<p>Due Date: <%= @task.due_date %></p>
+	      <p>Project: <%= @project.name %></p>
+	      <p>Tag: <%= @tag.name %></p>
+	      <p>Assigned To: <%= @user.name %> </p>
+				<p>Completed? <%= @response %></p>
       </div>
     </div>
      
     <div id="contentright">
       <div id="smallgutsr">
-      <p>Add a comment to this task:</p>
-        <div id="smallindentr">
-        <% @task.comments.each do |c| %>
+      	<p>Add a comment to this task:</p>
+	        <div id="smallindentr">
+						
+	    				 <% @task.comments.each do |c| %>
 
-          <a><%= c.message %></a>
-          <a><%= link_to("Edit", edit_comment_path(c.id)) %></a>
-          <a><%= link_to("Delete", comment_path(c.id), :method => :delete) %></a><br/><br/>
+	        	<a><%= c.message %></a>
+	          <a><%= link_to("Edit", edit_comment_path(c.id)) %></a>
+	          <a><%= link_to("Delete", comment_path(c.id), :method => :delete) %></a><br/><br/>
 
-        <% end %>
-      
+	      			 <% end %>
+    
+		      		 <%= form_for @comments do |c| %>
 
-        <%= form_for @comments do |c| %>
+	          <p><%= c.label :comment %></p>
+	          <p><%= c.text_area :message %></p>
 
-          <p>
-            <%= c.label :comment %></p>
-          <p>
-            <%= c.text_area :message %>
-          </p>
+		           <%= c.hidden_field :user_id, { :value => current_user } %>
+		           <%= c.hidden_field :task_id, { :value => @task.id } %>
 
-          <%= c.hidden_field :user_id, { :value => current_user } %>
-          <%= c.hidden_field :task_id, { :value => @task.id } %>
+		           <%= c.submit value: "Submit Comment" %>
 
-
-          <%= c.submit value: "Submit Comment" %>
-
-        <% end %>
-      </div>
+		       		 <% end %>
+		      </div>
       </div>
     </div>
-    <div id="clearcontentright">
-    </div>
+		
+	<div id="clearcontentright">
+	</div>
 
-    <div id="footer">
-    </div>
+	<div id="footer">
+	</div>
   
 </div>

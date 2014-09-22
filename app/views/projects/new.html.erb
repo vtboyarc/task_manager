@@ -1,44 +1,44 @@
 <div id="container">
   <div id="header">
     <div id="headerguts">
-    <h1>Task, Inc.</h1>
+    	<h1>Task, Inc.</h1>
+  	</div>
   </div>
-  </div>
+	
   <div id="sidebar">
     <div id="sidebarguts">
-    <h2>New Project</h2>
-    <div id="sidebarindent">
-    <p><%= link_to("Cancel Create", projects_path)%>
-    <p><%= link_to("Return to Home", root_path) %></p>
+    	<h2>New Project</h2>
+			
+		    <div id="sidebarindent">
+			    <p><%= link_to("Cancel Create", projects_path)%>
+			    <p><%= link_to("Return to Home", root_path) %></p>
+			  </div>
+  	</div>
   </div>
-  </div>
-  </div>
+	
     <div id="contentbig">
-      <div id="contentbigguts">
-        
-    <div id="contentbigguts">
-      
-      <%= form_for @project do |p| %>
+      <div id="contentbigguts">   
+		    <div id="contentbigguts">
+	      		<%= form_for @project do |p| %>
+	        <p>
+	          <%= p.label :name %>
+	          <%= p.text_field :name %>
+	        </p>
+	      	<p>
+	          <%= p.label :description %>
+	          <%= p.text_field :desc %>
+	        </p>
+	      		<%= p.submit value: "Create Project"%>
 
-        <p>
-          <%= p.label :name %>
-          <%= p.text_field :name %>
-        </p>
-      	<p>
-          <%= p.label :description %>
-          <%= p.text_field :desc %>
-        </p>
+	     		 	<% end %>
+		 		</div>
+ 		 	</div>
+    </div>
+		
+	<div id="clearcontentright">
+	</div>
 
-      	<%= p.submit value: "Create Project"%>
+	<div id="footer">
+	</div>
 
-      <% end %>
-
-    </div>
-  </div>
-    </div>
-    <div id="clearcontentright">
-    </div>
-    <div id="footer">
-    </div>
-  
 </div>

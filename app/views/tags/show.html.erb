@@ -1,35 +1,35 @@
 <div id="container">
   <div id="header">
     <div id="headerguts">
-    <h1>Task, Inc.</h1>
+    	<h1>Task, Inc.</h1>
+  	</div>
   </div>
-  </div>
+	
   <div id="sidebar">
     <div id="sidebarguts">
-    <h2>Tag Details</h2>
-    <div id="sidebarindent">
-    <p><%= link_to("Edit this Tag", edit_tag_path) %></p>
-    <p><%= link_to("Delete this Tag", tag_path, :method => :delete) %></p>  
-    <p><%= link_to("Create a New Tag", new_tag_path) %></p>
-    <p><%= link_to("Return to Tag Index", tags_path) %></p>
-    <p><%= link_to("Return to Home", root_path) %></p>
-  </div>
-  </div>
-  </div>
+    	<h2>Tag Details</h2>
+		    <div id="sidebarindent">
+			    <p><%= link_to("Edit this Tag", edit_tag_path) %></p>
+			    <p><%= link_to("Delete this Tag", tag_path, :method => :delete) %></p>  
+			    <p><%= link_to("Create a New Tag", new_tag_path) %></p>
+			    <p><%= link_to("Return to Tag Index", tags_path) %></p>
+			    <p><%= link_to("Return to Home", root_path) %></p>
+		  	</div>
+  	</div>
+ 	 </div>
+	 
     <div id="contentbig">
       <div id="contentbigguts">
-        
-    <div id="contentbigguts">
-      
-    	<p>Name: <%= @tag.name %></p>
-      
+    		<div id="contentbigguts">
+    			<p>Name: <%= @tag.name %></p>
+    		</div>	
+ 		 	</div>
+    </div>
+		
+	<div id="clearcontentright">
+	</div>
 
-    </div>
-  </div>
-    </div>
-    <div id="clearcontentright">
-    </div>
-    <div id="footer">
-    </div>
+	<div id="footer">
+	</div>
   
 </div>

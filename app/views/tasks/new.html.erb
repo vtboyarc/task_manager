@@ -1,75 +1,82 @@
 <div id="container">
+	
   <div id="header">
     <div id="headerguts">
-    <h1>Task, Inc.</h1>
+    	<h1>Task, Inc.</h1>
+  	</div>
   </div>
-  </div>
+	
   <div id="sidebar">
     <div id="sidebarguts">
-    <h2>New Task</h2>
-    <div id="sidebarindent">
-    <p><%= link_to("Cancel Create", tasks_path)%>
-    <p><%= link_to("Return to Home", root_path) %></p>
+    	<h2>New Task</h2>
+    		<div id="sidebarindent">
+    			<p><%= link_to("Cancel Create", tasks_path)%>
+    			<p><%= link_to("Return to Home", root_path) %></p>
+  			</div>
+  	</div>
   </div>
-  </div>
-  </div>
-    <div id="contentbig">
-      <div id="contentbigguts">
-        
-    <div id="contentbigguts">
-      
+	
+	<div id="contentbig">
+	  <div id="contentbigguts">  
+			<div id="contentbigguts">
+			
+	        <%= form_for @task do |t| %>
 
+	      <p>
+	        <%= t.label :name %>
+	        <%= t.text_field :name %>
+	      </p>
+			
+	      <p>
+	        <%= t.label :description %>
+	        <%= t.text_field :description %>
+	      </p>
+			
+	      <p>
+	        <%= t.label :priority %>
+	        <%= t.text_field :priority %>
+	      </p>
+			 
+	   	 	<p>
+	        <%= t.label :due_date %>
+	        <%= t.text_field :due_date %>
+	      </p>
 
-            <%= form_for @task do |t| %>
+	      <p>
+	        <%= t.label :project %>
+	        <%= t.collection_select :project_id, Project.all, :id, :name %>
+	      </p>
+			
+	      <p>
+	        <%= t.label :tag %>
+	        <%= t.collection_select :tag_id, Tag.all, :id, :name %>
+	      </p>
+			
+	    	<p>
+	        <%= t.label :assigned_to %>
+	        <%= t.collection_select :user_id, User.all, :id, :name %>
+	      </p>
+			
+	    	<p>
+	        <%= t.label :completed %>
+	        <%= t.check_box :completed%>
+	      </p>
+			
+	      <p> 
+	        <%= t.submit value: "Create Task" %>
 
-              <p>
-                <%= t.label :name %>
-                <%= t.text_field :name %>
-              </p>
-            <p>
-                <%= t.label :description %>
-                <%= t.text_field :description %>
-              </p>
-            <p>
-                <%= t.label :priority %>
-                <%= t.text_field :priority %>
-              </p>
-            <p>
-                <%= t.label :due_date %>
-                <%= t.text_field :due_date %>
-              </p>
-
-            <p>
-                <%= t.label :project %>
-                <%= t.collection_select :project_id, Project.all, :id, :name %>
-              </p>
-            <p>
-                <%= t.label :tag %>
-                <%= t.collection_select :tag_id, Tag.all, :id, :name %>
-              </p>
-            	<p>
-                <%= t.label :assigned_to %>
-                <%= t.collection_select :user_id, User.all, :id, :name %>
-              </p>
-            	<p>
-                <%= t.label :completed %>
-                <%= t.check_box :completed%>
-              </p>
-  
-              <p> 
-              <%= t.submit value: "Create Task" %>
-
-            <% end %>
-            </p>
-            
-      </p>
-    </div>
-  </div>
-    </div>
-    <div id="clearcontentright">
-    </div>
-    <div id="footer">
-    </div>
+	      	<% end %>
+				</p>   
+	  		</p>
+			</div>
+	 	</div>
+	</div>
+		
+	<div id="clearcontentright">
+	</div>
+	
+	<div id="footer">
+	</div>
   
 </div>
 

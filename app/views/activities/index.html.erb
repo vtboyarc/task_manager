@@ -7,8 +7,7 @@
 
   <div id="sidebar">
     <div id="sidebarguts">
-      <h2>Home</h2>
-      
+      <h2>Home</h2>     
       <div id="sidebarindent">
         <p><%= link_to("Projects", projects_path)%></p>
         <p><%= link_to("Tasks", tasks_path)%></p>
@@ -21,23 +20,26 @@
   
   <div id="contentbig">
     <div id="contentbigguts">
-    <h2>Welcome to Task Manager!</h2>
-    <p>Please choose a link from the list on the left to interact with that module.</p>
-    <h3>Recent Activity</h3>
-    <div id="contentbigguts">
-      <% @activities.each do |activity|%>
-        <div class="activity">
-          <%= activity.owner.name %>
-          <%= render_activity activity%>
-        </div> 
-      <% end %>
-
-    </div>
+    	<h2>Welcome to Task Manager!</h2>
+    		<p>Please choose a link from the list on the left to interact with that module.</p>
+    	<h3>Recent Activity</h3>	
+			
+	    <div id="contentbigguts">
+	      <% @activities.each do |activity|%>
+	        <div class="activity">
+	          <%= activity.owner.name %>
+	          <%= render_activity activity%>
+	        </div> 
+	      <% end %>
+	    </div>
+					
+  	</div>
+	</div>
+	
+  <div id="clearcontentright">
   </div>
-    </div>
-    <div id="clearcontentright">
-    </div>
-    <div id="footer">
-    </div>
+		
+  <div id="footer">
+  </div>
   
 </div>
