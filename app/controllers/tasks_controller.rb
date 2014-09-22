@@ -29,22 +29,7 @@ class TasksController < ApplicationController
     
      @user = User.find(@task.user_id)
      if @task.save
-       Pony.mail({
-               :to => "#{@user.email}",
-               :via => :smtp,
-               :subject => "#{current_user.name}" + " has assigned you a task.",
-               :body => "Your task is " + "#{@task.name}" + ".",
-               :via_options => {
-                   :address              => 'smtp.gmail.com',
-                   :port                 => '587',
-                   :enable_starttls_auto => true,
-                   :user_name            => ENV['MY_EMAIL'],
-                   :password             => ENV['MY_PASSWORD'],
-                   :authentication       => :plain, 
-                   :domain               => "localhost.localdomain" 
-            
-                       }
-                     })
+       UserMailer.task(@user).deliver
                      @project = Project.find(@task.project_id)
              redirect_to project_path(@project.name), notice: "Your email notification to #{@user.name} was sent successfully."
             else

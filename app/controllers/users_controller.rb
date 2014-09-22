@@ -18,6 +18,7 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
     
     if @user.save
+      UserMailer.welcome(@user).deliver
       redirect_to users_path(@user.id)
     else
       render "new"
