@@ -33,6 +33,8 @@ gem 'jquery-ui-rails'
 
 gem 'pony', '~> 1.11'
 
+gem 'sass-rails', '~> 3.2.3'
+
 
 # Use unicorn as the app server
 # gem 'unicorn'
