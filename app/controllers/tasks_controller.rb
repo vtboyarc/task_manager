@@ -38,8 +38,8 @@ class TasksController < ApplicationController
                    :address              => 'smtp.gmail.com',
                    :port                 => '587',
                    :enable_starttls_auto => true,
-                   :user_name            => 'taskinc.taskmanager@gmail.com',
-                   :password             => 'ocsbudai',
+                   :user_name            => ENV['MY_EMAIL'],
+                   :password             => ENV['MY_PASSWORD'],
                    :authentication       => :plain, 
                    :domain               => "localhost.localdomain" 
             
