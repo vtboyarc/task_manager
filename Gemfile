@@ -35,7 +35,7 @@ gem 'pony', '~> 1.11'
 
 gem 'sass-rails', '~> 3.2.3'
 
-
+gem 'rails_12factor'
 # Use unicorn as the app server
 # gem 'unicorn'
 
