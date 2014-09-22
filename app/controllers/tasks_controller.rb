@@ -22,10 +22,10 @@ class TasksController < ApplicationController
     @task = Task.new(params[:task])
     
     # TODO Figure out why this is here. 
-    @task.project_id = (params[:task][:project_id]).to_i
-    @task.tag_id = (params[:task][:tag_id]).to_i
-    @task.user_id = (params[:task][:user_id]).to_i
-    @task.completed = (params[:task][:completed])
+    # @task.project_id = (params[:task][:project_id]).to_i
+#     @task.tag_id = (params[:task][:tag_id]).to_i
+#     @task.user_id = (params[:task][:user_id]).to_i
+#     @task.completed = (params[:task][:completed])
     
     @user = User.find(@task.user_id)
     if @task.save
