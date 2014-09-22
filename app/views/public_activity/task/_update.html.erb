@@ -1,8 +1,13 @@
-
-<%if activity.trackable.completed == true %>
-		 's task "<%= activity.trackable.name %>"  was completed! 
-<%else%>
-	's task "<%= activity.trackable.name %>" was updated 
+<%if activity.trackable == true %>
+	
+	<%if activity.trackable.completed == true %>
+			 's task "<%= activity.trackable.name %>"  was completed! 
+	<%else%>
+		's task "<%= activity.trackable.name %>" was updated 
+	<%end%>
+	
+<% else %>
+	removed as task.
 <%end%>
 		
 				 

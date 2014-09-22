@@ -1,1 +1,6 @@
-updated the project "<%= activity.trackable.name %>"
+
+<% if activity.trackable%>	
+	updated the project "<%= activity.trackable.name %>"
+<% else%>
+	removed a project.	
+<% end %>
