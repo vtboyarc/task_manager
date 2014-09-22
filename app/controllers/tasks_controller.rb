@@ -48,22 +48,7 @@ class TasksController < ApplicationController
     @user = User.find(@task.user_id)
     
     if @task.update_attributes(params[:task])
-      Pony.mail({
-                :to => "#{@user.email}",
-                :via => :smtp,
-                :subject => "#{current_user.name}" + " has changed/updated a task.",
-                :body => "Please visit Task Manager and review Task: " + "#{@task.name}" + ".\n\nTask Description: " + "#{@task.description}",
-                :via_options => {
-                  :address              => 'smtp.gmail.com',
-                  :port                 => '587',
-                  :enable_starttls_auto => true,
-                  :user_name            => 'taskinc.taskmanager@gmail.com',
-                  :password             => 'ocsbudai',
-                  :authentication       => :plain, 
-                  :domain               => "localhost.localdomain" 
-        
-                  }
-                })
+        UserMailer.update_task(@user).deliver
        @project = Project.find(@task.project_id)
 
       redirect_to project_path(@project.name), :notice => "Your email notification to #{@user.name} was sent successfully."

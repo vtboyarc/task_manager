@@ -10,4 +10,9 @@ class UserMailer < ActionMailer::Base
       @user = user
       mail(:to => user.email, :subject => "You have been assigned a task")
     end
+    
+    def update_task(user)
+      @user = user
+      mail(:to => user.email, :subject => "A Task has been updated")   
   end
+end
