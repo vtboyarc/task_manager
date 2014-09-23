@@ -3,7 +3,7 @@ class ProjectsController < ApplicationController
   skip_before_filter :authorize, :only => [:index, :show]
  
   def index
-    @projects = Project.all
+    @projects = Project.includes(:tasks => :project).all
   end
   
   def new
