@@ -3,7 +3,8 @@ class TasksController < ApplicationController
   skip_before_filter :authorize, :only => [:index, :show]
  
   def index
-    @tasks = Task.all
+    # @tasks = Task.all
+    @tasks = Task.includes(:comments => :project).all
   end
   
   def find
