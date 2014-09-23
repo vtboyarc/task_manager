@@ -1,5 +1,9 @@
-$font-stack:    Helvetica, sans-serif;
-//pull out margin 0 and out in a module, then @extend
+$font-stack:    Futura;
+
+.margin {
+  margin: 0; 
+  padding: 0;
+}
 
 body{
   text-align:center;
@@ -19,11 +23,10 @@ body{
 }
 
 #header {
+  @extend .margin;
   width:100%;
   height:100px;
   background-color: #82B2BF;
-  margin:0;
-  padding:0;
   text-align:left;
   border-style:solid;
   border-color:#2E7183;
@@ -37,13 +40,12 @@ body{
 }
 
 #contentbig {
+  @extend .margin;
   width:75%;
   height:500px;
   text-align:left;
   float:right;
   background:#CDF0F9;
-  margin:0;
-  padding:0;
 }
 
 #contentbigguts {
@@ -57,13 +59,12 @@ body{
 }
 
 #contentleft {
+  @extend .margin;
   width:35%;
   height:500px;
   text-align:left;
   float:left;
   background:#CDF0F9;
-  margin:0;
-  padding:0;
 
 }
 
@@ -89,25 +90,23 @@ body{
 
 
 #contentright {
+  @extend .margin;
   width:40%;
   height:500px;
   text-align:left;
   float:right;
   background:#CDF0F9;
-  margin:0;
-  padding:0;
 
 }
 
 
 #sidebar {
+  @extend .margin;
   width:25%;
   height:500px;
   background:#FFFEDC;
-  margin:0;
   float:left;
   text-align:left;
-  padding:0;
 }
 
 #sidebarguts {
@@ -121,11 +120,10 @@ body{
 }
 
 #footer {
+  @extend .margin;
   width:100%;
   height:40px;
   background:#2E7183;
-  margin:0;
-  padding:0;
 }
 
 
